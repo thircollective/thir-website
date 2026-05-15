@@ -1712,3 +1712,17 @@ strong {
   .story-line.large { font-size: clamp(1.8rem, 7vw, 2.6rem); }
   .section-title { font-size: clamp(2.2rem, 7vw, 3rem); }
 }
+
+video {
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .brand-story video,
+  .what-is-thir video,
+  .ecosystem video,
+  .guided video,
+  .philosophy video {
+    display: none;
+  }
+}
