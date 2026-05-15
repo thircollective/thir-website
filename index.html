@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THIR Collective — Not Therapy. Not Motivation. Something Different.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+
+  <!-- ======================================================
+       NAVBAR
+  ====================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/logo_no_text.png" alt="THIR Collective logo: golden circular design with a small dot, representing stillness and inner clarity" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#ecosystem">Ecosystem</a></li>
+        <li><a href="#workshops">Workshops</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#founders">Founders</a></li>
+        <li><a href="#inquiry" class="nav-cta">Inquiry</a></li>
+      </ul>
+
+      <div class="nav-social">
+        <a href="https://www.instagram.com/thircollective" target="_blank" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thir-collective" target="_blank" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@thircollective" target="_blank" aria-label="YouTube" class="social-icon">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+    <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+  </svg>
+</a>
+        <a href="https://www.facebook.com/share/1B5sjKtafN/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="social-icon">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </nav>
+
+  <!-- Mobile Overlay — must live outside <nav> to escape its stacking context -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-overlay-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="#ecosystem" class="mobile-link">Ecosystem</a></li>
+        <li><a href="#workshops" class="mobile-link">Workshops</a></li>
+        <li><a href="#philosophy" class="mobile-link">Philosophy</a></li>
+        <li><a href="#founders" class="mobile-link">Founders</a></li>
+        <li><a href="#inquiry" class="mobile-link">Inquiry</a></li>
+      </ul>
+      <div class="mobile-social">
+        <a href="https://www.instagram.com/thircollective" target="_blank" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thircollective" target="_blank" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@thircollective" target="_blank" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/thircollective" target="_blank" aria-label="Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       1. HERO
+  ====================================================== -->
+  <section class="hero" id="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+  <source src="assets/hero-bg.mp4" type="video/mp4">
+</video>
+    <div class="hero-glow"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+      <div class="hero-logo-wrap reveal-fade">
+        <img src="assets/logo_no_text.png" alt="THIR Collective logo: golden circular emblem with a dot representing the concept of stillness of mind" class="hero-logo" />
+      </div>
+      <h1 class="hero-title reveal-up" style="--delay: 0.3s">
+  <span class="hero-title-main">THIR</span>
+  <span class="hero-title-sub">COLLECTIVE</span>
+  <span class="hero-title-line"></span>
+</h1>
+      <p class="hero-sub reveal-up" style="--delay: 0.6s">
+        Not Therapy.<br/>
+        Not Motivation.<br/>
+        <em>Something Different.</em>
+      </p>
+      <p class="hero-body reveal-up" style="--delay: 0.9s">
+        A space for clarity, reflection, and mental fitness in the modern world.
+      </p>
+      <div class="hero-actions reveal-up" style="--delay: 1.1s">
+        <a href="#what-is-thir" class="btn-primary">Explore THIR</a>
+        <a href="#inquiry" class="btn-ghost">Raise Inquiry</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  
+
+  <!-- ======================================================
+       3. BRAND STORY
+  ====================================================== -->
+  <section class="section brand-story" id="brand-story">
+    <video class="brand-story-video" autoplay muted loop playsinline>
+      <source src="assets/brand-story-bg.mp4" type="video/mp4">
+    </video>
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <div class="story-block reveal-up">
+        <p class="story-line large">Modern life constantly demands our attention.</p>
+      </div>
+      <div class="story-block reveal-up" style="--delay: 0.15s">
+        <p class="story-line medium muted">More noise.<br/>More pressure.<br/>More comparison.</p>
+      </div>
+      <div class="story-block reveal-up" style="--delay: 0.3s">
+        <p class="story-line medium">Yet internally, people feel<br/><em>more disconnected than ever.</em></p>
+      </div>
+      <div class="story-divider reveal-fade" style="--delay: 0.45s"></div>
+      <div class="story-block reveal-up" style="--delay: 0.5s">
+        <p class="story-line body-text">THIR Collective was born from a simple realization</p>
+        <p class="story-line large gold">"A healthy mind is not something<br/>we are born with.<br/>It is something we train."</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ======================================================
+       2. WHAT IS THIR?
+  ====================================================== -->
+  <section class="section what-is-thir" id="what-is-thir">
+    <video class="what-is-thir-video" autoplay muted loop playsinline>
+      <source src="assets/what-is-thir-bg.mp4" type="video/mp4">
+    </video>
+    <div class="grain-overlay"></div>
+    <div class="container narrow">
+      <p class="story-line large reveal-fade">What Is THIR?</p>
+      <p class="what-body reveal-up">
+        THIR Collective is a modern mental fitness ecosystem created to help people navigate stress, overstimulation, emotional fatigue, and the constant noise of modern life through reflection, conversation, awareness, and practical inner systems.
+      </p>
+      <p class="what-body reveal-up" style="--delay: 0.15s">
+        The word <em>Thir</em> comes from the Sikh tradition and represents sacred stillness of the mind. A state of inner steadiness that has been valued across ancient wisdom, traditions and is now increasingly supported by modern neuroscience &amp; psychology.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       4. THIR ECOSYSTEM
+  ====================================================== -->
+  <section class="section ecosystem" id="ecosystem">
+    <video class="ecosystem-video" autoplay muted loop playsinline>
+      <source src="assets/ecosystem-bg.mp4" type="video/mp4">
+    </video>
+    <div class="container center">
+      <span class="section-label reveal-fade">The Ecosystem</span>
+      <h2 class="section-title reveal-up">Everything connects.<br/><em>Within.</em></h2>
+    </div>
+    <div class="eco-svg-container reveal-fade" style="--delay: 0.3s">
+      <svg class="eco-svg-map" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-label="THIR Collective ecosystem diagram">
+        <defs>
+          <filter id="eco-glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="eco-hub-glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Spoke lines: THIR → each node -->
+        <line class="eco-line" data-line="thir-workshops"      x1="300" y1="300" x2="300" y2="95"/>
+        <line class="eco-line" data-line="thir-ai"             x1="300" y1="300" x2="502" y2="238"/>
+        <line class="eco-line" data-line="thir-guided"         x1="300" y1="300" x2="430" y2="472"/>
+        <line class="eco-line" data-line="thir-group"          x1="300" y1="300" x2="170" y2="472"/>
+        <line class="eco-line" data-line="thir-community"      x1="300" y1="300" x2="98"  y2="238"/>
+
+        <!-- Web lines: adjacent nodes -->
+        <line class="eco-line eco-line--web" data-line="workshops-ai"        x1="300" y1="95"  x2="502" y2="238"/>
+        <line class="eco-line eco-line--web" data-line="ai-guided"           x1="502" y1="238" x2="430" y2="472"/>
+        <line class="eco-line eco-line--web" data-line="guided-group"        x1="430" y1="472" x2="170" y2="472"/>
+        <line class="eco-line eco-line--web" data-line="group-community"     x1="170" y1="472" x2="98"  y2="238"/>
+        <line class="eco-line eco-line--web" data-line="community-workshops" x1="98"  y1="238" x2="300" y2="95"/>
+
+        <!-- Center THIR hub -->
+        <circle class="eco-hub-ring" cx="300" cy="300" r="69" filter="url(#eco-hub-glow)"/>
+        <circle class="eco-hub-circle" cx="300" cy="300" r="57"/>
+        <text x="300" y="294" class="eco-hub-label">THIR</text>
+        <text x="300" y="318" class="eco-hub-sub">COLLECTIVE</text>
+
+        <!-- Workshops  center (300, 79) -->
+        <g class="eco-node-group" data-node="workshops">
+          <rect class="eco-node-rect" x="218" y="54" width="165" height="51" rx="26"/>
+          <text class="eco-node-text" x="300" y="80">WORKSHOPS</text>
+        </g>
+
+        <!-- AI Companion  center (502, 237) -->
+        <g class="eco-node-group" data-node="ai">
+          <rect class="eco-node-rect" x="413" y="212" width="177" height="51" rx="26"/>
+          <text class="eco-node-text" x="502" y="238">AI COMPANION</text>
+        </g>
+
+        <!-- 1-1 Guided Sessions  center (430, 472) -->
+        <g class="eco-node-group" data-node="guided">
+          <rect class="eco-node-rect" x="334" y="445" width="192" height="54" rx="27"/>
+          <text class="eco-node-text" x="430" y="463">1-1 GUIDED</text>
+          <text class="eco-node-text" x="430" y="481">SESSIONS</text>
+        </g>
+
+        <!-- Focused Group Sessions  center (170, 472) -->
+        <g class="eco-node-group" data-node="group">
+          <rect class="eco-node-rect" x="65" y="445" width="210" height="54" rx="27"/>
+          <text class="eco-node-text" x="170" y="463">FOCUSED GROUP</text>
+          <text class="eco-node-text" x="170" y="481">SESSIONS</text>
+        </g>
+
+        <!-- Community  center (98, 237) -->
+        <g class="eco-node-group" data-node="community">
+          <rect class="eco-node-rect" x="11" y="212" width="174" height="51" rx="26"/>
+          <text class="eco-node-text" x="98" y="238">COMMUNITY</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       5. WORKSHOPS
+  ====================================================== -->
+  <section class="section workshops" id="workshops">
+    <div class="container workshops-heading">
+  <span class="section-label reveal-fade">Workshops</span>
+
+  <h2 class="section-title reveal-up workshop-heading-title">
+    Where change<br/>
+    <em>begins quietly.</em>
+  </h2>
+</div>
+    <div class="workshop-slider-wrap">
+      <button class="workshop-arrow workshop-arrow--prev" aria-label="Previous workshop">&#8592;</button>
+      <div class="workshop-cards">
+        <!-- RAHAO -->
+        <article class="workshop-card" data-workshop="rahao">
+          <div class="workshop-card-inner">
+            <span class="workshop-num">01</span>
+            <h3 class="workshop-name">Rahao</h3>
+            <p class="workshop-tagline">Pause. Ground. Respond.</p>
+            <button class="workshop-btn" data-open="rahao">Learn More</button>
+          </div>
+        </article>
+        <!-- VICHAAR -->
+        <article class="workshop-card" data-workshop="vichaar">
+          <div class="workshop-card-inner">
+            <span class="workshop-num">02</span>
+            <h3 class="workshop-name">Vichaar</h3>
+            <p class="workshop-tagline">Reflect. Understand. Decide.</p>
+            <button class="workshop-btn" data-open="vichaar">Learn More</button>
+          </div>
+        </article>
+        <!-- AGAMI -->
+        <article class="workshop-card" data-workshop="agami">
+          <div class="workshop-card-inner">
+            <span class="workshop-num">03</span>
+            <h3 class="workshop-name">Agami</h3>
+            <p class="workshop-tagline">Reflect. Begin. Move.</p>
+            <button class="workshop-btn" data-open="agami">Learn More</button>
+          </div>
+        </article>
+      </div>
+      <button class="workshop-arrow workshop-arrow--next" aria-label="Next workshop">&#8594;</button>
+    </div>
+    <div class="workshop-dots">
+      <button class="workshop-dot active" data-index="0" aria-label="Workshop 1"></button>
+      <button class="workshop-dot" data-index="1" aria-label="Workshop 2"></button>
+      <button class="workshop-dot" data-index="2" aria-label="Workshop 3"></button>
+    </div>
+
+    <!-- Workshop Modals -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box" id="modalBox">
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="modal-content" id="modalContent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       6. GUIDED SESSIONS
+  ====================================================== -->
+  <section class="section guided" id="guided">
+    <div class="grain-overlay"></div>
+    <div class="container narrow">
+      <span class="section-label reveal-fade">Guided Sessions</span>
+      <h2 class="section-title reveal-up">A conversation that<br/><em>holds space.</em></h2>
+      <div class="guided-body reveal-up" style="--delay: 0.2s">
+        <p>
+          Guided sessions are thoughtfully structured conversations designed for people navigating stress, difficult decisions, emotional fatigue, or simply the desire to understand themselves more clearly.
+        </p>
+        <p>
+          Not clinical. Not prescriptive. A safe, non-judgmental space where reflection meets practical awareness. Each session moves at your pace. Exploring clarity, emotional grounding, and inner direction.
+        </p>
+      </div>
+      <div class="guided-tags reveal-up" style="--delay: 0.35s">
+        <span class="tag">INDIVIDUAL 1-1 SESSIONS</span>
+        <span class="tag">FOCUSED GROUP SESSIONS</span>
+        
+      </div>
+      <div class="reveal-up" style="--delay: 0.5s">
+        <a href="#inquiry" class="btn-primary">Raise Inquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       7. AI WELLBEING COMPANION
+  ====================================================== -->
+  <section class="section ai-companion" id="ai-companion">
+    <div class="container">
+      <div class="ai-badge reveal-fade">In Development</div>
+      <span class="section-label reveal-fade">AI Wellbeing Companion</span>
+      <h2 class="section-title reveal-up">A quiet layer<br/><em>of support.</em></h2>
+      <div class="ai-cards reveal-up" style="--delay: 0.2s">
+
+        <article class="ai-card">
+          <div class="ai-card-top">
+            <span class="ai-card-num">01</span>
+            <div class="ai-card-icon"><i class="ti ti-brain"></i></div>
+          </div>
+          <h3 class="ai-card-heading">Cut Through<br>The Noise</h3>
+          <p class="ai-card-desc">Practical tools to help you understand what you are actually feeling and why.</p>
+        </article>
+
+        <article class="ai-card">
+          <div class="ai-card-top">
+            <span class="ai-card-num">02</span>
+            <div class="ai-card-icon"><i class="ti ti-wind"></i></div>
+          </div>
+          <h3 class="ai-card-heading">Breathe With<br>Intention</h3>
+          <p class="ai-card-desc">A moment to slow the body before quieting the mind. Simple, deliberate, yours.</p>
+        </article>
+
+        <article class="ai-card">
+          <div class="ai-card-top">
+            <span class="ai-card-num">03</span>
+            <div class="ai-card-icon"><i class="ti ti-ripple"></i></div>
+          </div>
+          <h3 class="ai-card-heading">Find Your<br>Still</h3>
+          <p class="ai-card-desc">Not emptying the mind. Training it to settle. A practice, not a performance.</p>
+        </article>
+
+        <article class="ai-card">
+          <div class="ai-card-top">
+            <span class="ai-card-num">04</span>
+            <div class="ai-card-icon"><i class="ti ti-message-circle"></i></div>
+          </div>
+          <h3 class="ai-card-heading">Think Out<br>Loud</h3>
+          <p class="ai-card-desc">A space to hear yourself more clearly. No advice. No agenda. Just honest reflection.</p>
+        </article>
+
+      </div>
+      <p class="ai-note reveal-up" style="--delay: 0.4s">
+        A supportive layer designed to complement workshops and guided sessions, not replace human connection.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       8. PHILOSOPHY
+  ====================================================== -->
+  <section class="section philosophy" id="philosophy">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <span class="section-label reveal-fade">Philosophy</span>
+      <div class="philosophy-lines">
+        <div class="phil-line reveal-up" style="--delay: 0s">
+          <p class="phil-text large">We are not here<br/><em>to fix people.</em></p>
+        </div>
+        <div class="phil-divider reveal-fade" style="--delay: 0.2s"></div>
+        <div class="phil-line reveal-up" style="--delay: 0.3s">
+          <p class="phil-text medium">We believe the mind, like the body, needs consistent,<br/>intentional training. Not a one-time intervention.<br/>Not a motivational reset. A practice.</p>
+        </div>
+        <div class="phil-divider reveal-fade" style="--delay: 0.45s"></div>
+        <div class="phil-line reveal-up" style="--delay: 0.5s">
+          <p class="phil-text medium muted">Modern life is not going to slow down. The noise, the pressure,<br/>the constant pull of comparison. It isn't going anywhere.<br/>What can change is how we meet it.</p>
+        </div>
+        <div class="phil-divider reveal-fade" style="--delay: 0.65s"></div>
+        <div class="phil-line reveal-up" style="--delay: 0.7s">
+          <p class="phil-text medium">Mental fitness is the ability to remain steady within yourself<br/>regardless of what is happening around you. It is not the absence<br/>of difficulty. It is the presence of inner resources strong enough to hold it.<br/>Stillness is not a personality trait.</p>
+        </div>
+        <div class="phil-divider reveal-fade" style="--delay: 1.45s"></div>
+        <div class="phil-line reveal-up" style="--delay: 1.5s">
+          <p class="phil-text large"><em>That is what we are here<br/>to help you build.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       9. FOUNDERS
+  ====================================================== -->
+  <section class="section founders" id="founders">
+    <div class="container">
+      <span class="section-label reveal-fade">Meet The Founders</span>
+      <h2 class="section-title reveal-up">Built from<br/><em>lived experience.</em></h2>
+      <div class="founders-grid">
+
+        <!-- Harleen -->
+        <div class="founder-card reveal-up" style="--delay: 0.1s">
+          <div class="founder-img-wrap">
+            <img src="assets/harleen.jpeg" alt="Harleen, THIR Collective co-founder with expertise in education and facilitation" class="founder-img" />
+            <div class="founder-img-overlay"></div>
+          </div>
+          <div class="founder-info">
+            <div class="founder-name-row">
+              <h3 class="founder-name">Harleen</h3>
+              <span class="founder-role">Co-Founder</span>
+            </div>
+            <p class="founder-bg">10+ Years · Education &amp; Facilitation</p>
+            <blockquote class="founder-quote">
+              "A period in life that raised questions around how much of our self-worth is shaped by external validation and what it means to reclaim it from within."
+            </blockquote>
+            <div class="founder-tags">
+              <span class="tag small">Neuroscience</span>
+              <span class="tag small">Positive Psychology</span>
+              
+            </div>
+            <p class="founder-responsibilities">Product Design · Delivery · Marketing</p>
+          </div>
+        </div>
+
+        <!-- Karan -->
+        <div class="founder-card reveal-up" style="--delay: 0.25s">
+          <div class="founder-img-wrap">
+            <img src="assets/karan.png" alt="Karan, THIR Collective co-founder with 10+ years in business operations and data analytics" class="founder-img" />
+            <div class="founder-img-overlay"></div>
+          </div>
+          <div class="founder-info">
+            <div class="founder-name-row">
+              <h3 class="founder-name">Karan</h3>
+              <span class="founder-role">Co-Founder</span>
+            </div>
+            <p class="founder-bg">10+ years · Business Operations &amp; Data Analytics</p>
+            <blockquote class="founder-quote">
+              "Navigating responsibility and pressure at an early age led to a deeper interest in understanding the human mind, behaviour, and inner resilience."
+            </blockquote>
+            <div class="founder-tags">
+              <span class="tag small">Human Behaviour</span>
+              <span class="tag small">Philosophy</span>
+            </div>
+            <p class="founder-responsibilities">Operations · Partnerships</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       10. CTA / INQUIRY
+  ====================================================== -->
+  <section class="section inquiry" id="inquiry">
+    <div class="inquiry-glow"></div>
+    <div class="container narrow center">
+      <h2 class="section-title large reveal-up">Begin the<br/><em>Conversation.</em></h2>
+      <p class="inquiry-sub reveal-up" style="--delay: 0.2s">
+        Tell us a little about what you're looking for.
+      </p>
+      <div class="reveal-up" style="--delay: 0.4s">
+        <button class="btn-primary large" id="openInquiry">Raise Inquiry</button>
+      </div>
+    </div>
+
+    <!-- Inquiry Modal -->
+    <div class="modal-overlay" id="inquiryOverlay">
+      <div class="modal-box inquiry-modal" id="inquiryBox">
+        <button class="modal-close" id="inquiryClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="inquiry-modal-content">
+          <h3 class="inquiry-modal-title">Begin the Conversation</h3>
+          <p class="inquiry-form-note">This form opens in a secure Google environment</p>
+          <div class="inquiry-iframe-wrap">
+            <div class="inquiry-iframe-fade"></div>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSflJdyI75qOhMr8ys1NrTD_50nUd-c8gr08imFlam14XVw8Xw/viewform"
+              width="100%"
+              height="580"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              style="border: none; display: block;">
+              Loading...
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       11. FOOTER
+  ====================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo-block">
+        <img src="assets/logo_no_text.png" alt="THIR Collective logo with text: golden design representing mental fitness and stillness of mind" class="footer-logo" />
+        <p class="footer-tagline">Not Therapy. Not Motivation.<br/><em>Something Different.</em></p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#ecosystem">Ecosystem</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="#workshops">Workshops</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="#guided">Sessions</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="#philosophy">Philosophy</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="#founders">Founders</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="#inquiry">Inquiry</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/thircollective" target="_blank" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thircollective" target="_blank" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@thircollective" target="_blank" aria-label="YouTube" class="social-icon">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+  </svg>
+</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 THIR Collective. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
