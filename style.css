@@ -1490,70 +1490,52 @@ strong {
   margin-bottom: 48px;
 }
 
-/* Inquiry Modal */
-.inquiry-modal {
-  max-width: 680px;
-  height: 85vh;
-  max-height: none;
-  overflow: hidden;
-  padding: 48px 52px 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-.inquiry-modal-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
+/* Contact Options Modal */
 .inquiry-modal-title {
   font-family: var(--font-serif);
   font-size: 2.4rem;
   font-weight: 400;
   color: var(--cream);
-  margin-bottom: 10px;
-  flex-shrink: 0;
+  margin-bottom: 12px;
 }
 
-.inquiry-form-note {
+.contact-options-modal {
+  max-width: 480px;
+  padding: 52px 48px;
+}
+
+.contact-options-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.contact-option-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 32px 20px;
+  border: 1px solid rgba(184, 150, 106, 0.2);
+  color: var(--stone-light);
+  text-decoration: none;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
   font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  color: var(--stone);
-  margin-bottom: 20px;
-  flex-shrink: 0;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
-.inquiry-iframe-wrap {
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid rgba(184, 150, 106, 0.15);
-  box-shadow: inset 0 8px 16px rgba(28, 25, 22, 0.4),
-              inset 0 -8px 16px rgba(28, 25, 22, 0.4);
-  flex: 1;
-  min-height: 0;
+.contact-option-item:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(184, 150, 106, 0.05);
 }
 
-.inquiry-iframe-wrap iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border: none;
-}
-
-.inquiry-iframe-fade {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 48px;
-  background: linear-gradient(to bottom, #211e1a, transparent);
-  pointer-events: none;
-  z-index: 1;
+.contact-option-item svg {
+  width: 28px;
+  height: 28px;
 }
 
 /* ===========================
@@ -1634,6 +1616,7 @@ strong {
 .footer-bottom {
   border-top: 1px solid rgba(184, 150, 106, 0.1);
   padding: 14px 40px;
+  position: relative;
 }
 
 .footer-bottom p {
@@ -1643,6 +1626,21 @@ strong {
   color: var(--stone);
   letter-spacing: 0.08em;
   text-align: center;
+}
+
+.footer-paw {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.15;
+  color: var(--gold);
+}
+
+.footer-paw svg {
+  width: 26px;
+  height: 26px;
+  display: block;
 }
 
 /* ===========================
@@ -1663,8 +1661,7 @@ strong {
 
   .container { padding: 0 24px; }
 
-  
-    padding: 100px 24px 80px; }
+  .hero { padding: 100px 24px 80px; }
   .hero-logo { height: 180px; }
   .hero-title { letter-spacing: 0.12em; }
 

@@ -162,43 +162,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ===========================
-     INQUIRY MODAL
+     INQUIRY CTA — WhatsApp / Contact Options
   =========================== */
-  const inquiryOverlay = document.getElementById('inquiryOverlay');
-  const inquiryBox = document.getElementById('inquiryBox');
-  const openInquiry = document.getElementById('openInquiry');
-  const inquiryClose = document.getElementById('inquiryClose');
+  // TODO: Replace XXXXXXXXXX with actual WhatsApp number (digits only, e.g. 919876543210)
+  const WHATSAPP_URL = 'https://wa.me/919250416325?text=Hi%2C%20I%27d%20like%20to%20begin%20a%20conversation%20with%20THIR%20Collective.';
 
-  function openInquiryModal() {
-    inquiryOverlay.classList.add('open');
+  const contactOptionsOverlay = document.getElementById('contactOptionsOverlay');
+  const contactOptionsClose = document.getElementById('contactOptionsClose');
+
+  function openContactOptions() {
+    contactOptionsOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
+    setTimeout(() => contactOptionsClose.focus(), 100);
   }
 
-  function closeInquiryModal() {
-    inquiryOverlay.classList.remove('open');
+  function closeContactOptions() {
+    contactOptionsOverlay.classList.remove('open');
     document.body.style.overflow = '';
   }
 
-  if (openInquiry) {
-    openInquiry.addEventListener('click', openInquiryModal);
-  }
-
-  // Also trigger on "Raise Inquiry" links in guided section
-  document.querySelectorAll('a[href="#inquiry"]').forEach(link => {
-    // Only for buttons, not footer nav
-    if (link.classList.contains('btn-primary')) {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        openInquiryModal();
-      });
+  window.handleInquiryCTA = function () {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.open(WHATSAPP_URL, '_blank');
+    } else {
+      openContactOptions();
     }
+  };
+
+  // Wire all inquiry CTAs
+  ['navInquiryCTA', 'mobileInquiryCTA', 'heroInquiryCTA', 'guidedInquiryCTA', 'openInquiry'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (id === 'mobileInquiryCTA') closeMenu();
+      window.handleInquiryCTA();
+    });
   });
 
-  inquiryClose.addEventListener('click', closeInquiryModal);
-
-  inquiryOverlay.addEventListener('click', (e) => {
-    if (e.target === inquiryOverlay) closeInquiryModal();
-  });
+  if (contactOptionsClose) contactOptionsClose.addEventListener('click', closeContactOptions);
+  if (contactOptionsOverlay) {
+    contactOptionsOverlay.addEventListener('click', (e) => {
+      if (e.target === contactOptionsOverlay) closeContactOptions();
+    });
+  }
 
 
   /* ===========================
@@ -207,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (modalOverlay.classList.contains('open')) closeWorkshopModal();
-      if (inquiryOverlay.classList.contains('open')) closeInquiryModal();
+      if (contactOptionsOverlay && contactOptionsOverlay.classList.contains('open')) closeContactOptions();
       if (mobileOverlay.classList.contains('open')) closeMenu();
     }
   });
@@ -235,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
-      if (target && !this.classList.contains('btn-primary')) {
+      if (target && !this.classList.contains('btn-primary') && this.id !== 'navInquiryCTA') {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
