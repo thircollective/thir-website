@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- ============================================================
+     ARTICLE VARIABLES — edit these fields when reusing template
+     Title:        Why You Are Always Exhausted, And Why Sleep Is Not the Answer
+     Category:     Mind Fitness
+     Pillar:       01 — Mind Fitness Education
+     Read time:    6 min
+     SEO keyword:  why am I always exhausted
+     Slug:         why-you-are-always-exhausted
+     Published:    June 2026
+     ============================================================ -->
+
+<title>Why You Are Always Exhausted, And Why Sleep Is Not the Answer | THIR Collective</title>
+<meta name="description" content="If you are sleeping enough but still waking up tired, the problem is not your body. It is something no amount of rest can fix. Here is what is actually happening."/>
+<meta name="keywords" content="why am I always exhausted, mental exhaustion, burnout, cognitive exhaustion, mind fitness India"/>
+<meta property="og:title" content="Why You Are Always Exhausted, And Why Sleep Is Not the Answer"/>
+<meta property="og:description" content="If you are sleeping enough but still waking up tired, the problem is not your body. It is something no amount of rest can fix."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://thircollective.com/library/why-you-are-always-exhausted"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="../Assets/logo_no_text.png"/>
+<link rel="apple-touch-icon" href="../Assets/logo_no_text.png"/>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --gold:#b8964e;
+  --gold-light:#d4af72;
+  --gold-dim:rgba(184,150,78,0.15);
+  --dark:#0d0d0b;
+  --surface:#141410;
+  --surface2:#1a1a14;
+  --text:#e8e2d4;
+  --text-muted:#8a8272;
+  --border:rgba(184,150,78,0.18);
+  --border-hover:rgba(184,150,78,0.4);
+  --cream:#f5efe4;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--dark);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.7;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:0;
+  opacity:0.6;
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  top:-20%;
+  left:50%;
+  transform:translateX(-50%);
+  width:700px;
+  height:400px;
+  background:radial-gradient(ellipse,rgba(184,150,78,0.06) 0%,transparent 70%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.page-wrap{position:relative;z-index:1}
+
+/* NAV */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(13,13,11,0.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
+
+.nav-logo img{
+  width:28px;
+  height:auto;
+}
+
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  font-weight:400;
+  letter-spacing:0.2em;
+  color:var(--gold);
+}
+
+.nav-back{
+  font-size:0.72rem;
+  letter-spacing:0.1em;
+  color:var(--text-muted);
+  text-decoration:none;
+  transition:color 0.2s;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.nav-back:hover{color:var(--gold)}
+
+.nav-back svg{
+  width:14px;
+  height:14px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.5;
+}
+
+/* ARTICLE HERO */
+.article-hero{
+  padding:4rem 1.5rem 3rem;
+  max-width:720px;
+  margin:0 auto;
+}
+
+.article-meta-row{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:1.5rem;
+  flex-wrap:wrap;
+}
+
+.article-cat{
+  font-size:0.7rem;
+  letter-spacing:0.28em;
+  color:var(--gold);
+  text-transform:uppercase;
+  font-weight:500;
+}
+
+.article-dot{
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:var(--text-muted);
+  opacity:0.4;
+}
+
+.article-read-time{
+  font-size:0.72rem;
+  color:var(--text-muted);
+  letter-spacing:0.08em;
+}
+
+.article-date{
+  font-size:0.72rem;
+  color:var(--text-muted);
+  letter-spacing:0.08em;
+}
+
+.article-title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.1;
+  color:var(--text);
+  margin-bottom:1.5rem;
+  letter-spacing:-0.01em;
+}
+
+.article-title em{
+  font-style:italic;
+  color:var(--gold-light);
+}
+
+.article-lede{
+  font-size:1.05rem;
+  color:var(--text-muted);
+  line-height:1.75;
+  border-left:2px solid var(--gold);
+  padding-left:1.25rem;
+  margin-bottom:0;
+  border-radius:0;
+}
+
+/* DIVIDER */
+.article-divider{
+  width:48px;
+  height:1px;
+  background:var(--gold);
+  opacity:0.4;
+  margin:2.5rem auto;
+}
+
+/* ARTICLE BODY */
+.article-body{
+  max-width:680px;
+  margin:0 auto;
+  padding:0 1.5rem 4rem;
+}
+
+.article-body p{
+  font-size:1rem;
+  color:var(--text);
+  line-height:1.85;
+  margin-bottom:1.5rem;
+}
+
+.article-body h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  font-size:1.5rem;
+  color:var(--text);
+  line-height:1.3;
+  margin:2.5rem 0 1rem;
+  letter-spacing:0.01em;
+}
+
+.article-body strong{
+  color:var(--text);
+  font-weight:500;
+}
+
+/* PULL QUOTE */
+.pull-quote{
+  margin:2.5rem 0;
+  padding:1.5rem 1.75rem;
+  border-left:2px solid var(--gold);
+  background:var(--surface);
+  border-radius:0;
+}
+
+.pull-quote p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.3rem;
+  color:var(--gold-light);
+  line-height:1.55;
+  margin:0;
+}
+
+/* CALLOUT */
+.callout{
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:1.5rem;
+  margin:2rem 0;
+}
+
+.callout-label{
+  font-size:0.68rem;
+  letter-spacing:0.28em;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:0.75rem;
+  display:block;
+}
+
+.callout p{
+  font-size:0.9rem;
+  color:var(--text-muted);
+  margin:0;
+  line-height:1.7;
+}
+
+/* AUTHOR BLOCK */
+.author-block{
+  max-width:680px;
+  margin:0 auto;
+  padding:2rem 1.5rem;
+  border-top:1px solid var(--border);
+  display:flex;
+  align-items:flex-start;
+  gap:1.25rem;
+}
+
+.author-logo{
+  width:40px;
+  height:40px;
+  flex-shrink:0;
+}
+
+.author-logo img{
+  width:100%;
+  height:auto;
+}
+
+.author-name{
+  font-size:0.78rem;
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:0.06em;
+  margin-bottom:0.25rem;
+}
+
+.author-role{
+  font-size:0.7rem;
+  color:var(--text-muted);
+  letter-spacing:0.06em;
+  margin-bottom:0.5rem;
+}
+
+.author-note{
+  font-size:0.8rem;
+  color:var(--text-muted);
+  line-height:1.65;
+}
+
+/* CTA BLOCK */
+.article-cta{
+  max-width:680px;
+  margin:0 auto 4rem;
+  padding:0 1.5rem;
+}
+
+.cta-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:2rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.cta-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.cta-label{
+  font-size:0.68rem;
+  letter-spacing:0.28em;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:0.75rem;
+}
+
+.cta-title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1.6rem;
+  color:var(--text);
+  line-height:1.25;
+  margin-bottom:0.75rem;
+}
+
+.cta-title em{
+  font-style:italic;
+  color:var(--gold-light);
+}
+
+.cta-sub{
+  font-size:0.82rem;
+  color:var(--text-muted);
+  line-height:1.65;
+  margin-bottom:1.5rem;
+  max-width:420px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.cta-buttons{
+  display:flex;
+  gap:0.75rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--dark);
+  font-size:0.72rem;
+  font-weight:500;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:0.75rem 1.75rem;
+  text-decoration:none;
+  border:1px solid var(--gold);
+  transition:background 0.2s,color 0.2s;
+  cursor:pointer;
+}
+
+.btn-primary:hover{
+  background:var(--gold-light);
+  border-color:var(--gold-light);
+}
+
+.btn-ghost{
+  display:inline-block;
+  background:transparent;
+  color:var(--gold);
+  font-size:0.72rem;
+  font-weight:400;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:0.75rem 1.75rem;
+  text-decoration:none;
+  border:1px solid rgba(184,150,78,0.4);
+  transition:border-color 0.2s,color 0.2s;
+  cursor:pointer;
+}
+
+.btn-ghost:hover{
+  border-color:var(--gold);
+  color:var(--gold-light);
+}
+
+/* RELATED */
+.related{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  padding:3rem 1.5rem;
+}
+
+.related-inner{
+  max-width:680px;
+  margin:0 auto;
+}
+
+.related-label{
+  font-size:0.68rem;
+  letter-spacing:0.28em;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+
+.related-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+
+.related-card{
+  background:var(--dark);
+  border:1px solid var(--border);
+  padding:1.25rem;
+  text-decoration:none;
+  transition:border-color 0.2s;
+  display:block;
+}
+
+.related-card:hover{border-color:var(--border-hover)}
+
+.related-card-cat{
+  font-size:0.65rem;
+  letter-spacing:0.24em;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:0.5rem;
+}
+
+.related-card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;
+  font-weight:400;
+  color:var(--text);
+  line-height:1.35;
+  margin-bottom:0.75rem;
+}
+
+.related-card-arrow{
+  font-size:0.7rem;
+  color:var(--text-muted);
+  letter-spacing:0.1em;
+}
+
+/* FOOTER */
+.footer{
+  background:var(--dark);
+  border-top:1px solid var(--border);
+  padding:2rem 1.5rem;
+}
+
+.footer-inner{
+  max-width:680px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1rem;
+  text-align:center;
+}
+
+.footer-logo{
+  width:32px;
+  height:auto;
+  opacity:0.6;
+}
+
+.footer-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:0.85rem;
+  color:var(--text-muted);
+}
+
+.footer-nav{
+  display:flex;
+  gap:1.25rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.footer-nav a{
+  font-size:0.7rem;
+  color:var(--text-muted);
+  text-decoration:none;
+  letter-spacing:0.08em;
+  transition:color 0.2s;
+}
+
+.footer-nav a:hover{color:var(--gold)}
+
+.footer-copy{
+  font-size:0.65rem;
+  color:var(--text-muted);
+  opacity:0.5;
+  letter-spacing:0.08em;
+}
+
+/* REVEAL ANIMATIONS */
+.reveal-up{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity 0.65s ease,transform 0.65s ease;
+}
+
+.reveal-fade{
+  opacity:0;
+  transition:opacity 0.65s ease;
+}
+
+.reveal-up.visible,
+.reveal-fade.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .navbar{padding:0 1.25rem}
+  .article-hero{padding:2.5rem 1.25rem 2rem}
+  .article-body{padding:0 1.25rem 3rem}
+  .author-block{padding:1.5rem 1.25rem;flex-direction:column;gap:1rem}
+  .article-cta{padding:0 1.25rem}
+  .cta-card{padding:1.5rem 1.25rem}
+  .article-title{font-size:1.85rem}
+  .pull-quote p{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo">
+      <img src="../Assets/logo_no_text.png" alt="THIR Collective"/>
+      <span class="nav-brand">THIR</span>
+    </a>
+    <a href="../library.html" class="nav-back">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to the Library
+    </a>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <header class="article-hero">
+    <div class="article-meta-row reveal-fade">
+      <span class="article-cat">Mind Fitness</span>
+      <span class="article-dot"></span>
+      <span class="article-read-time">6 min read</span>
+      <span class="article-dot"></span>
+      <span class="article-date">June 2026</span>
+    </div>
+    <h1 class="article-title reveal-up" style="transition-delay:0.1s">
+      Why You Are Always Exhausted,<br/><em>And Why Sleep Is Not the Answer</em>
+    </h1>
+    <p class="article-lede reveal-up" style="transition-delay:0.2s">
+      If you are sleeping enough but still waking up tired, the problem is not your body. It is something no amount of rest can fix. Here is what is actually happening.
+    </p>
+  </header>
+
+  <div class="article-divider"></div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <p class="reveal-up">You slept seven hours. Maybe eight. You woke up and within twenty minutes you were already tired again.</p>
+
+    <p class="reveal-up">Not physically tired. Something else. A heaviness that sits behind the eyes. A flatness that makes the morning feel like an obstacle before the day has even started.</p>
+
+    <p class="reveal-up">You have probably told yourself it is the workload. The commute. The kids. The phone. And those things do not help. But they are not the cause.</p>
+
+    <p class="reveal-up">What you are experiencing is not physical exhaustion. It is cognitive and emotional exhaustion. And no amount of sleep fixes it, because sleep restores the body, not the mind.</p>
+
+    <h2 class="reveal-up">The mind does not switch off the way the body does</h2>
+
+    <p class="reveal-up">When you sleep, your muscles recover. Your immune system works. Your cells repair.</p>
+
+    <p class="reveal-up">But your mind keeps processing. The unresolved conversation from yesterday. The presentation you are half-prepared for. The message you have been avoiding sending. The version of yourself you are quietly disappointed in.</p>
+
+    <p class="reveal-up">Psychologists call these open loops. Unfinished business that the mind cannot file away because it has no resolution. And open loops consume energy whether you are awake or asleep.</p>
+
+    <div class="pull-quote reveal-up">
+      <p>Every unresolved thing in your life is an open tab. And you are running all of them simultaneously.</p>
+    </div>
+
+    <p class="reveal-up">This is the Zeigarnik effect, the well-documented tendency of the mind to keep returning to incomplete tasks and unresolved experiences. It was identified in the 1920s by psychologist Bluma Zeigarnik, who noticed that waiters could remember every detail of an unpaid order and forget it completely the moment the bill was settled.</p>
+
+    <p class="reveal-up">Your mind works the same way. Every unresolved thing in your life is an open tab. And you are running all of them simultaneously.</p>
+
+    <h2 class="reveal-up">Why the tiredness feels different from physical fatigue</h2>
+
+    <p class="reveal-up">Physical tiredness has a texture. Your body is heavy. Your eyes close easily. You want to lie down.</p>
+
+    <p class="reveal-up">Cognitive and emotional exhaustion feels like the opposite. You are tired but you cannot rest. You lie down and your mind keeps moving. You finish work and you cannot switch off. You have a free hour and you fill it with your phone because stillness feels more uncomfortable than noise.</p>
+
+    <p class="reveal-up">This is because the nervous system is dysregulated. It has been in a low-grade state of alert for so long that it no longer knows how to return to baseline without help.</p>
+
+    <p class="reveal-up">The mind has been carrying too much, for too long, without a structured way to set any of it down.</p>
+
+    <h2 class="reveal-up">What most people do. And why it does not work.</h2>
+
+    <p class="reveal-up">The standard advice is to rest more. Take a holiday. Disconnect for the weekend. Do some yoga.</p>
+
+    <p class="reveal-up">These things are not wrong. But they address the symptom, not the source.</p>
+
+    <p class="reveal-up">If you go on holiday carrying the same open loops, the same unresolved relationships, the same unclear direction, the same pattern of putting everyone else's needs before your ability to think straight, you come back from that holiday just as depleted as when you left. Sometimes more so, because the distance gave you just enough perspective to feel how far from yourself you have drifted.</p>
+
+    <div class="pull-quote reveal-up">
+      <p>Rest without reflection is just delay.</p>
+    </div>
+
+    <h2 class="reveal-up">What actually closes the loop</h2>
+
+    <p class="reveal-up">The research in positive psychology is consistent on this point. What reduces cognitive and emotional exhaustion is not more rest. It is resolution.</p>
+
+    <p class="reveal-up">Closing an open loop does not require solving the problem. It requires naming it clearly, understanding what it is actually asking of you, and making a deliberate decision about how you are going to relate to it. That decision, even if the decision is that you cannot resolve this right now, signals to the mind that it can stop running the background process.</p>
+
+    <p class="reveal-up">This is not complicated. But it requires a structured practice, because the mind left to itself will keep circling. It needs a framework that moves it from open-ended rumination to honest reflection to a concrete next step.</p>
+
+    <div class="callout reveal-up">
+      <span class="callout-label">The ARRIVE Method</span>
+      <p>This is exactly what the ARRIVE Method was built to do. Three movements: Expand, Focus, Anchor. Open the loop. Name it honestly. Build a practice around what you find. Every session follows this arc.</p>
+    </div>
+
+    <h2 class="reveal-up">The three things your mind needs that it is not getting</h2>
+
+    <p class="reveal-up">Based on the frameworks of positive psychology and what we work through with clients in sessions, cognitive and emotional exhaustion almost always comes back to three unmet needs.</p>
+
+    <p class="reveal-up">The first is space to expand. Most people carry things they have never said out loud, even to themselves. Naming what you are actually carrying, not the polished version but the real version, releases a significant amount of the pressure the mind is holding.</p>
+
+    <p class="reveal-up">The second is clarity. Exhaustion is often not about the quantity of things on your mind. It is about the quality of confusion. When you cannot distinguish between what is actually happening and what you are afraid might happen, everything feels equally urgent. Clarity collapses that.</p>
+
+    <p class="reveal-up">The third is a practice to anchor to. Not a resolution to every problem. Just one concrete thing you can do, consistently, that moves you in the direction of steadiness. The mind recovers fastest when it has something to return to.</p>
+
+    <h2 class="reveal-up">This is what mind fitness is for</h2>
+
+    <p class="reveal-up">We are not here to tell you that you are broken. You are not. You are carrying more than most people can see from the outside, without a structured way to set any of it down.</p>
+
+    <p class="reveal-up">Mind fitness is the practice of building that structure. Not through motivation. Not through therapy. Through a consistent, repeatable practice that trains the mind the same way the body is trained, gradually, deliberately, and with the understanding that the capacity builds over time.</p>
+
+    <p class="reveal-up">If you recognise yourself in what you have read here, that recognition is the starting point.</p>
+
+    <p class="reveal-up">The next step is a conversation.</p>
+
+  </article>
+
+  <!-- AUTHOR BLOCK -->
+  <div class="author-block reveal-up">
+    <div class="author-logo">
+      <img src="../Assets/logo_no_text.png" alt="THIR Collective"/>
+    </div>
+    <div>
+      <p class="author-name">Founding Team, THIR Collective</p>
+      <p class="author-role">Mind Fitness Practitioners, Delhi NCR</p>
+      <p class="author-note">We write about mind fitness, human behaviour, and the practice of inner steadiness. One article a week, rooted in positive psychology and real-world practice.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta reveal-up">
+    <div class="cta-card">
+      <p class="cta-label">Begin the practice</p>
+      <h2 class="cta-title">Ready to close<br/><em>some of those loops?</em></h2>
+      <p class="cta-sub">The discovery call is free. 40 minutes. No commitment. Just a structured conversation to understand where you are and what you want to build.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/919250416325?text=Hi%2C%20I%27d%20like%20to%20book%20a%20discovery%20call%20with%20THIR%20Collective." target="_blank" class="btn-primary">Book your discovery call</a>
+        <a href="mailto:hello@thircollective.com" class="btn-ghost">Email us instead</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <div class="related">
+    <div class="related-inner">
+      <p class="related-label">Keep reading</p>
+      <div class="related-grid">
+        <a href="#" class="related-card">
+          <p class="related-card-cat">Human Behaviour</p>
+          <p class="related-card-title">Why your brain keeps replaying the conversation</p>
+          <p class="related-card-arrow">Coming soon</p>
+        </a>
+        <a href="#" class="related-card">
+          <p class="related-card-cat">Philosophy</p>
+          <p class="related-card-title">What the word Thir actually means</p>
+          <p class="related-card-arrow">Coming soon</p>
+        </a>
+        <a href="#" class="related-card">
+          <p class="related-card-cat">The ARRIVE Method</p>
+          <p class="related-card-title">The five elements of a flourishing life, and why most people are missing two of them</p>
+          <p class="related-card-arrow">Coming soon</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../Assets/logo_no_text.png" alt="THIR Collective" class="footer-logo"/>
+      <p class="footer-tagline">Not Therapy. Not Motivation. Something Different.</p>
+      <nav class="footer-nav">
+        <a href="../index.html">Home</a>
+        <a href="../library.html">Library</a>
+        <a href="../individual.html">Individual Programmes</a>
+        <a href="../institution.html">Institutional Programmes</a>
+        <a href="../index.html#philosophy">Philosophy</a>
+        <a href="../index.html#founders">Founders</a>
+      </nav>
+      <p class="footer-copy">2026 THIR Collective. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal-up, .reveal-fade');
+  const observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.12});
+  revealEls.forEach(function(el){observer.observe(el)});
+</script>
+
+</body>
+</html>

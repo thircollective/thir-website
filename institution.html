@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Institutions | THIR Collective</title>
+  <link rel="canonical" href="https://thircollective.com/institutional-programmes" />
+  <meta name="description" content="Thir Collective delivers mind fitness workshops and group sessions for schools, NGOs, and companies across Delhi NCR. Rooted in the ARRIVE Method. Measurable outcomes included." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="Assets/logo_no_text.png" />
+  <link rel="apple-touch-icon" href="Assets/logo_no_text.png" />
+  <style>
+    /* ---- Reset ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0d0d0b;
+      --bg-surface: #141410;
+      --bg-light:   #1a1a16;
+      --gold:       #b8964e;
+      --gold-light: #d4af72;
+      --text:       #e8e2d4;
+      --text-muted: #8a8272;
+      --border:     rgba(184,150,78,0.2);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'DM Sans', system-ui, sans-serif;
+      --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 500px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(184,150,78,0.055) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---- Typography ---- */
+    h1, h2, h3, h4, blockquote { font-family: var(--font-serif); font-weight: 300; line-height: 1.15; }
+    em { font-style: italic; color: var(--gold); }
+    strong { font-weight: 500; color: var(--text); }
+
+    /* ---- Scroll Reveal ---- */
+    .reveal-fade, .reveal-up {
+      opacity: 0;
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+      transition-delay: var(--delay, 0s);
+    }
+    .reveal-up { transform: translateY(32px); }
+    .reveal-fade.visible, .reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ---- Layout ---- */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .container.narrow { max-width: 780px; }
+    .container.center { text-align: center; }
+    .section { padding: 100px 0; position: relative; }
+
+    .section-label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+
+    /* ---- Buttons ---- */
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 38px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.4s var(--ease-out);
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-out);
+      z-index: 0;
+    }
+    .btn-primary:hover::before { transform: scaleX(1); }
+    .btn-primary:hover { color: var(--bg); }
+    .btn-primary, .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 14px 38px;
+      background: transparent;
+      border: 1px solid rgba(184,150,78,0.25);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color 0.4s, color 0.4s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ---- Tags ---- */
+    .tag {
+      display: inline-block;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .tag.featured { border-color: var(--gold); color: var(--gold); }
+
+    /* ---- Divider ---- */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+      margin: 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================
+       NAVBAR
+    ============================ */
+    .ins-navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      transition: background 0.5s var(--ease-out), backdrop-filter 0.5s;
+    }
+    .ins-navbar.scrolled {
+      background: rgba(13,13,11,0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .ins-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 48px;
+    }
+    .ins-nav-logo img { height: 38px; width: auto; display: block; }
+    .ins-nav-back {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(184,150,78,0.35);
+      padding: 8px 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .ins-nav-back:hover { background: rgba(184,150,78,0.1); color: var(--gold-light); }
+
+    /* ============================
+       HERO
+    ============================ */
+    .ins-hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ins-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.12;
+      filter: blur(2px) brightness(0.45);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .ins-hero-glow {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 80vmax; height: 60vmax;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at 50% 20%, rgba(184,150,78,0.09) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ins-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .ins-hero-eyebrow {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .ins-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.08;
+      margin-bottom: 28px;
+    }
+    .ins-hero-title em { display: block; color: var(--gold); font-style: italic; }
+    .ins-hero-sub {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ============================
+       TAB SELECTOR
+    ============================ */
+    .ins-tabs-section {
+      background: var(--bg);
+      border-top: 1px solid rgba(184,150,78,0.18);
+      border-bottom: 1px solid rgba(184,150,78,0.18);
+      padding: 36px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .ins-tabs-label {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .ins-tabs-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      padding: 0 40px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .ins-tabs-row::-webkit-scrollbar { display: none; }
+    .ins-tab {
+      flex-shrink: 0;
+      padding: 10px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(184,150,78,0.35);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .ins-tab:hover { border-color: rgba(184,150,78,0.65); color: var(--gold-light); }
+    .ins-tab.active { background: var(--gold); border-color: var(--gold); color: var(--bg); font-weight: 500; }
+    .ins-tab.active:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    /* ============================
+       SHARED ZONE COMPONENTS
+    ============================ */
+    .ins-pull-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.55;
+      max-width: 680px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+
+    /* Statement grid */
+    .ins-statement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .ins-statement-card {
+      background: var(--bg-surface);
+      padding: 28px 28px 28px 24px;
+      border-left: 2px solid var(--gold);
+      transition: background 0.3s;
+    }
+    .ins-statement-card:hover { background: var(--bg-light); }
+    .ins-statement-card p {
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Workshop cards grid */
+    .ins-workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 4px;
+    }
+    .ins-workshop-card {
+      background: var(--bg-surface);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: background 0.3s;
+    }
+    .ins-workshop-card:hover { background: var(--bg-light); }
+    .ins-workshop-num {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .ins-workshop-name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .ins-workshop-tagline {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .ins-workshop-desc {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    /* Outcome cards */
+    .ins-outcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin-top: 4px;
+    }
+    .ins-outcome-card {
+      background: var(--bg-surface);
+      padding: 28px 28px 28px 24px;
+      border-left: 2px solid var(--gold);
+      transition: background 0.3s;
+    }
+    .ins-outcome-card:hover { background: var(--bg-light); }
+    .ins-outcome-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .ins-outcome-desc {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* Pricing cards */
+    .ins-pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 4px;
+    }
+    .ins-price-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.3s;
+    }
+    .ins-price-card:hover { border-color: rgba(184,150,78,0.45); }
+    .ins-price-card.featured { border-color: rgba(184,150,78,0.55); background: rgba(184,150,78,0.04); }
+    .ins-price-name {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .ins-price-sub {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .ins-price-amount {
+      font-family: var(--font-sans);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+    .ins-price-desc {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+    .ins-pricing-note {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-top: 24px;
+      line-height: 1.7;
+    }
+
+    /* CTA strip */
+    .ins-cta-strip {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 44px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      margin-top: 48px;
+    }
+    .ins-cta-strip-left { flex: 1; min-width: 0; }
+    .ins-cta-strip-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .ins-cta-strip-sub {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .ins-cta-strip-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    /* Focus areas (Zone C) */
+    .ins-focus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin-top: 4px;
+    }
+    .ins-focus-card {
+      background: var(--bg-surface);
+      padding: 18px 20px 18px 18px;
+      border-left: 2px solid rgba(184,150,78,0.4);
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .ins-focus-card:hover { background: var(--bg-light); border-left-color: var(--gold); }
+    .ins-focus-card p {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Zone section backgrounds */
+    .ins-zone-who { background: var(--bg-surface); }
+    .ins-zone-workshops { background: var(--bg); }
+    .ins-zone-outcomes { background: var(--bg-surface); }
+    .ins-zone-pricing { background: var(--bg); }
+
+    /* ============================
+       ARRIVE METHOD
+    ============================ */
+    .ins-method { background: var(--bg-surface); }
+    .ins-method-pull {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.55;
+      max-width: 620px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+    .ins-method-pills {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+      max-width: 760px;
+      margin: 0 auto 28px;
+    }
+    .ins-method-pill {
+      flex: 1;
+      background: var(--bg-surface);
+      padding: 32px 28px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .ins-method-pill:hover { background: var(--bg-light); }
+    .ins-method-pill-name {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .ins-method-pill-desc {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .ins-method-footer {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+
+    /* ============================
+       YOUR GUIDES
+    ============================ */
+    .ins-guides { background: var(--bg); }
+    .ins-guides-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 4px;
+    }
+    .ins-guide-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.3s;
+    }
+    .ins-guide-card:hover { border-color: rgba(184,150,78,0.5); border-left-color: var(--gold-light); }
+    .ins-guide-img-wrap {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .ins-guide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(10%) brightness(0.9);
+      transition: filter 0.5s;
+    }
+    .ins-guide-card:hover .ins-guide-img { filter: grayscale(0%) brightness(1); }
+    .ins-guide-name {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .ins-guide-role {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .ins-guide-bio {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .ins-guide-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+
+    /* ============================
+       CLOSING CTA
+    ============================ */
+    .ins-closing-cta {
+      padding: 120px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ins-closing-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(184,150,78,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .ins-closing-content { position: relative; z-index: 1; }
+    .ins-closing-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .ins-closing-sub {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 44px;
+    }
+    .ins-closing-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .ins-closing-phone {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ============================
+       FOOTER
+    ============================ */
+    .ins-footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .ins-footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .ins-footer-logo-block { flex-shrink: 0; }
+    .ins-footer-logo {
+      height: 40px;
+      width: auto;
+      margin-bottom: 8px;
+      display: block;
+      filter: brightness(0.7);
+    }
+    .ins-footer-tagline {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .ins-footer-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+    }
+    .ins-footer-nav a {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .ins-footer-nav a:hover { color: var(--gold); }
+    .ins-footer-dot { color: rgba(184,150,78,0.35); font-size: 14px; margin: 0 10px; }
+    .ins-footer-social { display: flex; gap: 16px; align-items: center; flex-shrink: 0; }
+    .ins-social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+    .ins-social-icon:hover { color: var(--gold); }
+    .ins-social-icon svg { width: 20px; height: 20px; }
+    .ins-footer-bottom {
+      border-top: 1px solid rgba(184,150,78,0.1);
+      padding: 14px 40px 20px;
+      position: relative;
+    }
+    .ins-footer-bottom p {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+    .ins-footer-paw {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.15;
+      color: var(--gold);
+    }
+    .ins-footer-paw svg { width: 26px; height: 26px; display: block; }
+
+    /* ============================
+       STATS BAR (Zone A)
+    ============================ */
+    .ins-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .ins-stat-card {
+      background: #1a1a14;
+      border: 1px solid rgba(184,150,78,0.18);
+      border-left: 2px solid #b8964e;
+      border-radius: 4px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .ins-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.75rem;
+      font-weight: 300;
+      color: #d4af72;
+      line-height: 1;
+    }
+    .ins-stat-desc {
+      font-size: 0.82rem;
+      color: #8a8272;
+      line-height: 1.6;
+    }
+    .ins-stat-source {
+      font-size: 0.65rem;
+      color: rgba(138,130,114,0.6);
+      font-style: italic;
+      margin-top: 0.25rem;
+    }
+
+    /* ============================
+       WHAT CHANGES (Zone A)
+    ============================ */
+    .ins-zone-changes { background: var(--bg); }
+    .ins-changes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .ins-changes-list { display: flex; flex-direction: column; }
+    .ins-changes-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .ins-changes-item:first-child { padding-top: 0; }
+    .ins-changes-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .ins-changes-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .ins-changes-item-title {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .ins-changes-item-body {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .ins-changes-pull {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-style: italic;
+      color: var(--gold);
+      line-height: 1.35;
+      margin-bottom: 32px;
+    }
+    .ins-compound-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .ins-compound-item {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .ins-compound-item strong { color: var(--text); font-weight: 400; }
+    .ins-what-we-provide {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      padding: 24px 28px;
+    }
+    .ins-what-we-provide-label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .ins-what-we-provide-body {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ============================
+       FOCUSED GROUP SESSION CARDS
+    ============================ */
+    .ins-fgs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 4px;
+    }
+    .ins-fgs-card {
+      background: var(--bg-surface);
+      border: 1px solid rgba(184,150,78,0.18);
+      border-left: 2px solid var(--gold);
+      padding: 1rem;
+    }
+    .ins-fgs-card-title {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .ins-fgs-card-body {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 1024px) {
+      .ins-cta-strip { flex-direction: column; align-items: flex-start; gap: 28px; }
+      .ins-cta-strip-actions { flex-wrap: wrap; }
+    }
+
+    @media (max-width: 900px) {
+      .ins-statement-grid { grid-template-columns: repeat(2, 1fr); }
+      .ins-workshop-grid { grid-template-columns: 1fr; }
+      .ins-fgs-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .ins-nav-inner { padding: 18px 24px; }
+      .ins-hero { padding: 120px 24px 60px; min-height: auto; }
+      .container { padding: 0 24px; }
+      .section { padding: 80px 0; }
+      .section-divider { margin: 0 24px; }
+      .ins-tabs-row { padding: 0 24px; justify-content: flex-start; }
+      .ins-guides-grid { grid-template-columns: 1fr; }
+      .ins-footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px 24px; }
+      .ins-footer-nav { justify-content: flex-start; }
+      .ins-footer-bottom { padding: 14px 24px; }
+      .ins-footer-paw { display: none; }
+      .ins-closing-cta { padding: 80px 24px; }
+      .ins-cta-strip { padding: 36px 28px; }
+    }
+
+    @media (max-width: 900px) {
+      .ins-changes-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 640px) {
+      .ins-outcome-grid { grid-template-columns: 1fr; }
+      .ins-pricing-grid { grid-template-columns: 1fr; }
+      .ins-method-pills { flex-direction: column; }
+      .ins-stats-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .ins-statement-grid { grid-template-columns: 1fr; }
+      .ins-focus-grid { grid-template-columns: 1fr; }
+      .ins-closing-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================
+       NAVBAR
+  ============================ -->
+  <nav class="ins-navbar" id="insNavbar">
+    <div class="ins-nav-inner">
+      <a href="index.html" class="ins-nav-logo">
+        <img src="Assets/logo_no_text.png" alt="THIR Collective logo" />
+      </a>
+      <a href="index.html" class="ins-nav-back">Back to THIR Collective</a>
+    </div>
+  </nav>
+
+  <!-- ============================
+       HERO
+  ============================ -->
+  <section class="ins-hero">
+    <video class="ins-hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="Assets/what-is-thir-bg.mp4" type="video/mp4">
+    </video>
+    <div class="ins-hero-glow"></div>
+    <div class="ins-hero-content">
+      <span class="ins-hero-eyebrow reveal-fade">For Institutions</span>
+      <h1 class="ins-hero-title reveal-up" style="--delay: 0.15s">
+        Your people are your most important investment.
+        <em>This is how you protect it.</em>
+      </h1>
+      <p class="ins-hero-sub reveal-up" style="--delay: 0.3s">
+        We work with Schools, NGOs, and Organisations to build the inner steadiness that makes everything else possible. Rooted in positive psychology. Measurable outcomes included.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================
+       TAB SELECTOR
+  ============================ -->
+  <section class="ins-tabs-section">
+    <p class="ins-tabs-label">I am here for</p>
+    <div class="ins-tabs-row">
+      <button class="ins-tab" data-tab="schools">Schools / NGOs</button>
+      <button class="ins-tab" data-tab="companies">Organisations</button>
+    </div>
+  </section>
+
+  <!-- ============================
+       ZONE A: Schools and NGOs
+  ============================ -->
+  <div data-zone="schools">
+
+    <section class="ins-zone-who section">
+      <div class="container">
+        <div class="ins-stats-row">
+          <div class="ins-stat-card reveal-up" style="--delay: 0.1s">
+            <p class="ins-stat-number">1 in 3</p>
+            <p class="ins-stat-desc">teachers globally report high occupational stress and emotional exhaustion affecting classroom quality</p>
+            <p class="ins-stat-source">UNESCO Education Research, 2023</p>
+          </div>
+          <div class="ins-stat-card reveal-up" style="--delay: 0.15s">
+            <p class="ins-stat-number">75%</p>
+            <p class="ins-stat-desc">of teachers say they lack adequate tools to manage their own emotional wellbeing under the demands of the role</p>
+            <p class="ins-stat-source">OECD TALIS Report, 2023</p>
+          </div>
+        </div>
+      </div>
+      <div class="container center">
+        <span class="section-label reveal-fade">Who This Is For</span>
+        <p class="ins-pull-quote reveal-up" style="--delay: 0.1s">
+          A teacher who can pause becomes a classroom that can breathe.
+        </p>
+      </div>
+      <div class="container">
+        <div class="ins-statement-grid">
+          <div class="ins-statement-card reveal-up" style="--delay: 0.05s"><p>Teaching staff managing pressure, fatigue, and emotional load</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.1s"><p>School leadership looking to invest in staff wellbeing</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.15s"><p>NGO teams delivering in high-stress, high-impact environments</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.2s"><p>Staff who perform calm while feeling anything but</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.25s"><p>Institutions with a mandate under NEP 2020 for social-emotional learning</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.3s"><p>Teams that want a shared language for emotional regulation</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="ins-zone-workshops section">
+      <div class="container">
+        <span class="section-label reveal-fade">The Workshops</span>
+        <div class="ins-workshop-grid">
+          <div class="ins-workshop-card reveal-up" style="--delay: 0.05s">
+            <span class="ins-workshop-num">01</span>
+            <h3 class="ins-workshop-name">Rahao</h3>
+            <span class="ins-workshop-tagline">Pause. Ground. Respond.</span>
+            <p class="ins-workshop-desc">The art of the pause. Learning to stop before reacting. For teachers carrying the weight of thirty students, a room, and a curriculum simultaneously. Tools: CLEAR and MOVE.</p>
+            <span class="tag">1.5 to 2 hours</span>
+          </div>
+          <div class="ins-workshop-card reveal-up" style="--delay: 0.1s">
+            <span class="ins-workshop-num">02</span>
+            <h3 class="ins-workshop-name">Vichaar</h3>
+            <span class="ins-workshop-tagline">Reflect. Understand. Decide.</span>
+            <p class="ins-workshop-desc">Honest reflection. Separating fact from story, emotion from interpretation. For educators who need clarity under pressure, not just coping strategies. Tools: SIFT and SEED.</p>
+            <span class="tag">1.5 to 2 hours</span>
+          </div>
+          <div class="ins-workshop-card reveal-up" style="--delay: 0.15s">
+            <span class="ins-workshop-num">03</span>
+            <h3 class="ins-workshop-name">Agami</h3>
+            <span class="ins-workshop-tagline">Prepare. Begin. Move.</span>
+            <p class="ins-workshop-desc">Intentional action. Converting insight into practice that actually holds inside a classroom. Closing the gap between knowing what matters and doing it. Tools: RISE and GROW.</p>
+            <span class="tag">1.5 to 2 hours</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="ins-zone-outcomes section">
+      <div class="container">
+        <span class="section-label reveal-fade">What Your Institution Receives</span>
+        <div class="ins-outcome-grid">
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.05s">
+            <h4 class="ins-outcome-title">A measure of where your staff actually are</h4>
+            <p class="ins-outcome-desc">Before and after every session, we gather structured wellbeing data from your staff. You receive a clear Group Resilience Score, showing where your team started and how it moved. Evidence your leadership can read, discuss, and act on.</p>
+          </div>
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.1s">
+            <h4 class="ins-outcome-title">Outcome report within 7 days</h4>
+            <p class="ins-outcome-desc">A structured document presenting scores, themes, and recommendations. Delivered after every session.</p>
+          </div>
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.15s">
+            <h4 class="ins-outcome-title">A shared language for your staff</h4>
+            <p class="ins-outcome-desc">Every participant leaves with tools they can use independently. The practice continues after we leave.</p>
+          </div>
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.2s">
+            <h4 class="ins-outcome-title">NEP 2020 alignment</h4>
+            <p class="ins-outcome-desc">Our programme directly supports the social-emotional learning mandate. It is not a discretionary spend. It is a policy response.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="ins-zone-changes section">
+      <div class="container">
+        <span class="section-label reveal-fade">What Changes for Your School</span>
+        <div class="ins-changes-grid">
+          <div class="ins-changes-list reveal-up" style="--delay: 0.1s">
+            <div class="ins-changes-item">
+              <div class="ins-changes-dot"></div>
+              <div>
+                <p class="ins-changes-item-title">Calmer classrooms</p>
+                <p class="ins-changes-item-body">A teacher who can pause becomes a classroom that can breathe. The impact of inner regulation is not contained to the individual. It radiates into every interaction.</p>
+              </div>
+            </div>
+            <div class="ins-changes-item">
+              <div class="ins-changes-dot"></div>
+              <div>
+                <p class="ins-changes-item-title">More reflective staff</p>
+                <p class="ins-changes-item-body">Teachers who have done Vichaar approach conflict, misunderstanding, and difficulty differently. Less likely to escalate. More capable of the nuanced response that students remember.</p>
+              </div>
+            </div>
+            <div class="ins-changes-item">
+              <div class="ins-changes-dot"></div>
+              <div>
+                <p class="ins-changes-item-title">Greater professional follow-through</p>
+                <p class="ins-changes-item-body">Agami addresses the gap between knowing and doing, where most professional development quietly fails. Teachers who attend follow through more consistently on what they already know matters.</p>
+              </div>
+            </div>
+            <div class="ins-changes-item">
+              <div class="ins-changes-dot"></div>
+              <div>
+                <p class="ins-changes-item-title">Reduced reactive behaviour</p>
+                <p class="ins-changes-item-body">Staff teams that share a common language for emotional regulation navigate tension more constructively. The ARRIVE Method gives your entire staff team that language.</p>
+              </div>
+            </div>
+            <div class="ins-changes-item">
+              <div class="ins-changes-dot"></div>
+              <div>
+                <p class="ins-changes-item-title">Measurable, reportable results</p>
+                <p class="ins-changes-item-body">Before and after feedback from every session, synthesised into an outcomes report your leadership can read, discuss, and present.</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-up" style="--delay: 0.2s">
+            <p class="ins-changes-pull">The impact compounds.</p>
+            <ul class="ins-compound-list">
+              <li class="ins-compound-item"><strong>"A teacher who can pause"</strong> becomes a classroom that can breathe.</li>
+              <li class="ins-compound-item"><strong>"A teacher who can reflect"</strong> becomes a classroom that can think.</li>
+              <li class="ins-compound-item"><strong>"A teacher who can act with intention"</strong> becomes a classroom that can grow.</li>
+              <li class="ins-compound-item"><strong>"A school where teachers arrive fully"</strong> becomes a school that produces the kind of human beings NEP 2020 envisions.</li>
+            </ul>
+            <div class="ins-what-we-provide">
+              <p class="ins-what-we-provide-label">What we provide</p>
+              <p class="ins-what-we-provide-body">After each session, participants complete a short feedback form. We synthesise the responses into a clear outcomes report with data your school can use for internal records, leadership presentations, and academic year planning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="section" style="background: var(--bg-surface);">
+      <div class="container">
+        <span class="section-label reveal-fade">Focused Group Sessions</span>
+        <p class="reveal-up" style="--delay: 0.05s; font-family: var(--font-sans); font-size: 13.5px; font-weight: 300; color: var(--text-muted); line-height: 1.75; margin-bottom: 28px;">For staff teams working through a shared challenge, or leadership groups building decision-making and communication skills together. Focused group sessions bring the ARRIVE Method to smaller groups of 3 to 20 people, with a format built around what that specific group is carrying.</p>
+        <div class="ins-fgs-grid">
+          <div class="ins-fgs-card reveal-up" style="--delay: 0.05s">
+            <h4 class="ins-fgs-card-title">Who it is for</h4>
+            <p class="ins-fgs-card-body">Leadership teams, department heads, pastoral staff, or any group of 3 to 20 people navigating a common challenge or building a shared practice.</p>
+          </div>
+          <div class="ins-fgs-card reveal-up" style="--delay: 0.1s">
+            <h4 class="ins-fgs-card-title">What happens</h4>
+            <p class="ins-fgs-card-body">90 minutes. ARRIVE Method facilitation adapted to the group. Structured baseline at session 1. Individual notes for every participant after each session.</p>
+          </div>
+          <div class="ins-fgs-card reveal-up" style="--delay: 0.15s">
+            <h4 class="ins-fgs-card-title">Pricing</h4>
+            <p class="ins-fgs-card-body">Rs. 999 per head per session. Series pricing available for 3 or more sessions with the same group.</p>
+          </div>
+        </div>
+        <p class="reveal-fade" style="--delay: 0.2s; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem;">Focused group sessions can be booked as a standalone or combined with the workshop programme.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="ins-zone-pricing section">
+      <div class="container">
+        <span class="section-label reveal-fade">Pricing</span>
+        <div class="ins-pricing-grid">
+          <div class="ins-price-card reveal-up" style="--delay: 0.05s">
+            <h3 class="ins-price-name">Single Workshop</h3>
+            <span class="ins-price-sub">Rahao, Vichaar, or Agami</span>
+            <p class="ins-price-amount">Rs. 999 per head</p>
+            <p class="ins-price-desc">Minimum 20 participants. Rs. 799 per additional participant beyond 20.</p>
+          </div>
+          <div class="ins-price-card featured reveal-up" style="--delay: 0.1s">
+            <h3 class="ins-price-name">Full Programme</h3>
+            <span class="ins-price-sub">All three workshops, same cohort</span>
+            <p class="ins-price-amount">12% saving on the full price</p>
+            <p class="ins-price-desc">Book all three workshops for the same group and receive a 12% discount on the combined cost. Delivered across a term or academic year.</p>
+            <span class="tag featured">Most Impact</span>
+          </div>
+          <div class="ins-price-card reveal-up" style="--delay: 0.15s">
+            <h3 class="ins-price-name">Coach on Retainer</h3>
+            <span class="ins-price-sub">2 hours on-site per week</span>
+            <p class="ins-price-amount">Rs. 20,000 per month</p>
+            <p class="ins-price-desc">Ongoing 1-1 and focused group sessions for your staff. Monthly anonymised wellbeing report included.</p>
+            <span class="tag">Recurring</span>
+          </div>
+          <div class="ins-price-card reveal-up" style="--delay: 0.2s">
+            <h3 class="ins-price-name">Post-Workshop Content Package</h3>
+            <span class="ins-price-sub">Optional add-on</span>
+            <p class="ins-price-amount">Rs. 5,000 per workshop</p>
+            <p class="ins-price-desc">Professionally written social media content for your school's channels. Extends the conversation and signals your commitment to staff wellbeing.</p>
+          </div>
+        </div>
+        <div class="ins-cta-strip reveal-up" style="--delay: 0.1s">
+          <div class="ins-cta-strip-left">
+            <h3 class="ins-cta-strip-heading">Bring the ARRIVE Method to your school.</h3>
+          </div>
+          <div class="ins-cta-strip-actions">
+            <a href="https://wa.me/919250416325?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20school%20workshop%20programme%20at%20THIR%20Collective." target="_blank" class="btn-primary">Get in touch on WhatsApp</a>
+            <a href="mailto:hello@thircollective.com" class="btn-ghost">Email us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /zone schools -->
+
+  <!-- ============================
+       ZONE B: Companies
+  ============================ -->
+  <div data-zone="companies" style="display:none">
+
+    <section class="ins-zone-who section">
+      <div class="container">
+        <div class="ins-stats-row">
+          <div class="ins-stat-card reveal-up" style="--delay: 0.1s">
+            <p class="ins-stat-number">83%</p>
+            <p class="ins-stat-desc">of workers in India report experiencing workplace stress, with burnout cited as the primary driver of attrition in high-performing teams</p>
+            <p class="ins-stat-source">Deloitte Global Workplace Burnout Study, 2023</p>
+          </div>
+          <div class="ins-stat-card reveal-up" style="--delay: 0.15s">
+            <p class="ins-stat-number">Rs. 1.1L Cr</p>
+            <p class="ins-stat-desc">estimated annual productivity loss attributable to employee mental health challenges across Indian corporates</p>
+            <p class="ins-stat-source">FICCI and EY Mental Health Report, 2023</p>
+          </div>
+        </div>
+      </div>
+      <div class="container center">
+        <span class="section-label reveal-fade">Who This Is For</span>
+        <p class="ins-pull-quote reveal-up" style="--delay: 0.1s">
+          Your team is performing. But performance without steadiness is not sustainable.
+        </p>
+      </div>
+      <div class="container">
+        <div class="ins-statement-grid">
+          <div class="ins-statement-card reveal-up" style="--delay: 0.05s"><p>HR and People teams investing in employee wellbeing</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.1s"><p>Leadership teams navigating pressure, pace, and performance</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.15s"><p>Organisations with ESG mandates that include employee wellness</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.2s"><p>Teams experiencing burnout, high attrition, or low engagement</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.25s"><p>Managers who want to lead with clarity, not just productivity</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.3s"><p>Companies that want measurable outcomes, not a one-day event</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="ins-zone-workshops section">
+      <div class="container">
+        <span class="section-label reveal-fade">The Workshops</span>
+        <div class="ins-workshop-grid">
+          <div class="ins-workshop-card reveal-up" style="--delay: 0.05s">
+            <span class="ins-workshop-num">01</span>
+            <h3 class="ins-workshop-name">Rahao</h3>
+            <span class="ins-workshop-tagline">Pause. Ground. Respond.</span>
+            <p class="ins-workshop-desc">For professionals who respond to everything and reflect on nothing. The pause before the reaction. Learning that the space between stimulus and response is where real decisions live. Tools: CLEAR and MOVE.</p>
+            <span class="tag">2 hours</span>
+          </div>
+          <div class="ins-workshop-card reveal-up" style="--delay: 0.1s">
+            <span class="ins-workshop-num">02</span>
+            <h3 class="ins-workshop-name">Vichaar</h3>
+            <span class="ins-workshop-tagline">Reflect. Understand. Decide.</span>
+            <p class="ins-workshop-desc">Separating fact from narrative. For teams where decisions are shaped by emotion, assumption, or pressure rather than clarity. Tools: SIFT and SEED.</p>
+            <span class="tag">2 hours</span>
+          </div>
+          <div class="ins-workshop-card reveal-up" style="--delay: 0.15s">
+            <span class="ins-workshop-num">03</span>
+            <h3 class="ins-workshop-name">Agami</h3>
+            <span class="ins-workshop-tagline">Prepare. Begin. Move.</span>
+            <p class="ins-workshop-desc">From insight to action. Bridging the gap between knowing what matters and actually doing it. For organisations where follow-through is the missing link. Tools: RISE and GROW.</p>
+            <span class="tag">2 hours</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="ins-zone-outcomes section">
+      <div class="container">
+        <span class="section-label reveal-fade">What Your Organisation Receives</span>
+        <div class="ins-outcome-grid">
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.05s">
+            <h4 class="ins-outcome-title">Before and after wellbeing data</h4>
+            <p class="ins-outcome-desc">Group Resilience Scores built from structured wellbeing data gathered before and after every session.</p>
+          </div>
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.1s">
+            <h4 class="ins-outcome-title">Outcome report within 7 days</h4>
+            <p class="ins-outcome-desc">Structured findings, data, and recommendations. Delivered after every session.</p>
+          </div>
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.15s">
+            <h4 class="ins-outcome-title">A shared language for your team</h4>
+            <p class="ins-outcome-desc">Participants leave with tools they can use independently. The practice does not stop when the session ends.</p>
+          </div>
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.2s">
+            <h4 class="ins-outcome-title">Coach on retainer option</h4>
+            <p class="ins-outcome-desc">2 hours on-site per week. Ongoing 1-1 and group sessions. Monthly anonymised wellbeing report. Rs. 20,000 per month.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="section" style="background: var(--bg);">
+      <div class="container">
+        <span class="section-label reveal-fade">Focused Group Sessions</span>
+        <p class="reveal-up" style="--delay: 0.05s; font-family: var(--font-sans); font-size: 13.5px; font-weight: 300; color: var(--text-muted); line-height: 1.75; margin-bottom: 28px;">For leadership cohorts, management teams, or any group navigating a specific challenge together. Focused group sessions bring the ARRIVE Method to smaller groups of 3 to 20 people, with the format built around what that team is actually carrying.</p>
+        <div class="ins-fgs-grid">
+          <div class="ins-fgs-card reveal-up" style="--delay: 0.05s">
+            <h4 class="ins-fgs-card-title">Who it is for</h4>
+            <p class="ins-fgs-card-body">Leadership teams, department heads, pastoral staff, or any group of 3 to 20 people navigating a common challenge or building a shared practice.</p>
+          </div>
+          <div class="ins-fgs-card reveal-up" style="--delay: 0.1s">
+            <h4 class="ins-fgs-card-title">What happens</h4>
+            <p class="ins-fgs-card-body">90 minutes. ARRIVE Method facilitation adapted to the group. Structured baseline at session 1. Individual notes for every participant after each session.</p>
+          </div>
+          <div class="ins-fgs-card reveal-up" style="--delay: 0.15s">
+            <h4 class="ins-fgs-card-title">Pricing</h4>
+            <p class="ins-fgs-card-body">Rs. 999 per head per session. Series pricing available for 3 or more sessions with the same group.</p>
+          </div>
+        </div>
+        <p class="reveal-fade" style="--delay: 0.2s; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem;">Focused group sessions can be booked as a standalone or combined with the workshop programme.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="ins-zone-pricing section">
+      <div class="container">
+        <span class="section-label reveal-fade">Pricing</span>
+        <div class="ins-pricing-grid">
+          <div class="ins-price-card reveal-up" style="--delay: 0.05s">
+            <h3 class="ins-price-name">Single Workshop</h3>
+            <span class="ins-price-sub">Rahao, Vichaar, or Agami</span>
+            <p class="ins-price-amount">Rs. 1,500 per head</p>
+            <p class="ins-price-desc">Minimum 20 participants. Rs. 1,200 per additional participant beyond 20.</p>
+          </div>
+          <div class="ins-price-card featured reveal-up" style="--delay: 0.1s">
+            <h3 class="ins-price-name">Coach on Retainer</h3>
+            <span class="ins-price-sub">2 hours on-site per week</span>
+            <p class="ins-price-amount">Rs. 20,000 per month</p>
+            <p class="ins-price-desc">Ongoing 1-1 and focused group sessions. Monthly anonymised wellbeing report included.</p>
+            <span class="tag featured">Recurring</span>
+          </div>
+        </div>
+        <p class="ins-pricing-note reveal-fade" style="--delay: 0.2s">Full series pricing across all three workshops negotiated on headcount. Contact us to discuss.</p>
+        <div class="ins-cta-strip reveal-up" style="--delay: 0.1s">
+          <div class="ins-cta-strip-left">
+            <h3 class="ins-cta-strip-heading">Bring the ARRIVE Method to your team.</h3>
+            <p class="ins-cta-strip-sub">Outcome report delivered within 7 days of every session.</p>
+          </div>
+          <div class="ins-cta-strip-actions">
+            <a href="https://wa.me/919250416325?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20corporate%20workshop%20programme%20at%20THIR%20Collective." target="_blank" class="btn-primary">Get in touch on WhatsApp</a>
+            <a href="mailto:hello@thircollective.com" class="btn-ghost">Email us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /zone companies -->
+
+
+  <!-- ============================
+       YOUR GUIDES (always visible)
+  ============================ -->
+  <section class="ins-guides section">
+    <div class="container">
+      <span class="section-label reveal-fade">Founding Coaches</span>
+      <div class="ins-guides-grid">
+
+        <div class="ins-guide-card reveal-up" style="--delay: 0.1s">
+          <div class="ins-guide-img-wrap">
+            <img src="Assets/harleen.jpeg" alt="Harleen, Co-Founder and Clinical Lead" class="ins-guide-img" />
+          </div>
+          <h3 class="ins-guide-name">Harleen</h3>
+          <span class="ins-guide-role">Founding Coach</span>
+          <p class="ins-guide-bio">Most people leave a conversation with Harleen feeling two things they did not expect to feel together: heard, and clear.</p>
+          <p class="ins-guide-bio">She has a rare quality in any room she enters. She does not rush toward the answer. She holds the space long enough for you to find it yourself. That quality was not learned in a classroom. It was built across a decade of standing in front of thirty students every day, reading rooms, managing invisible pressures, and learning that the most important thing a person in front of others can do is make them feel that what they are carrying matters.</p>
+          <p class="ins-guide-bio">Her formal training in counselling psychology, positive psychology, and NLP gives her the framework. Her years in education gave her the instinct. The combination is why a conversation with Harleen rarely feels like a session. It feels like a weight you have been carrying finally has somewhere to go.</p>
+        </div>
+
+        <div class="ins-guide-card reveal-up" style="--delay: 0.2s">
+          <div class="ins-guide-img-wrap">
+            <img src="Assets/Karan.png" alt="Karan, Co-Founder, Operations and Strategy" class="ins-guide-img" />
+          </div>
+          <h3 class="ins-guide-name">Karan</h3>
+          <span class="ins-guide-role">Founding Coach</span>
+          <p class="ins-guide-bio">Karan did not learn about resilience in a seminar. He learned it the long way, across nine years of showing up inside one of the world's most demanding corporate environments, managing people through pressure, delivering results through difficult seasons, and quietly figuring out how to keep going without burning out.</p>
+          <p class="ins-guide-bio">What those years taught him was not a productivity system. It was something more useful: that the people who sustain high performance over time are not the ones who push hardest. They are the ones who have learned to manage their inner state as deliberately as they manage their workload. He found that out the hard way, and it cost him years he would rather have had back.</p>
+          <p class="ins-guide-bio">That is why he is here. Not to tell you what to do. To help you get there faster than he did.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CLOSING CTA (always visible)
+  ============================ -->
+  <section class="ins-closing-cta">
+    <div class="ins-closing-glow"></div>
+    <div class="ins-closing-content">
+      <h2 class="ins-closing-title reveal-up">Begin the conversation.</h2>
+      <p class="ins-closing-sub reveal-up" style="--delay: 0.15s">
+        Tell us who your institution is, who the programme is for, and what you are trying to build. We will take it from there.
+      </p>
+      <div class="ins-closing-buttons reveal-up" style="--delay: 0.3s">
+        <a href="https://wa.me/919250416325?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20THIR%20Collective%27s%20institutional%20programmes." target="_blank" class="btn-primary">Get in touch on WhatsApp</a>
+        <a href="mailto:hello@thircollective.com" class="btn-ghost">Email us</a>
+      </div>
+      <p class="ins-closing-phone reveal-fade" style="--delay: 0.4s">Or call us: +91 92504 16325</p>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER (always visible)
+  ============================ -->
+  <footer class="ins-footer">
+    <div class="ins-footer-inner">
+      <div class="ins-footer-logo-block">
+        <img src="Assets/logo_no_text.png" alt="THIR Collective" class="ins-footer-logo" />
+        <p class="ins-footer-tagline">Not Therapy. Not Motivation.<br /><em style="color: var(--text-muted);">Something Different.</em></p>
+      </div>
+      <nav class="ins-footer-nav">
+        <a href="index.html#ecosystem">Ecosystem</a>
+        <span class="ins-footer-dot" aria-hidden="true">·</span>
+        <a href="index.html#philosophy">Philosophy</a>
+        <span class="ins-footer-dot" aria-hidden="true">·</span>
+        <a href="index.html#founders">Founders</a>
+      </nav>
+      <div class="ins-footer-social">
+        <a href="https://www.instagram.com/thircollective" target="_blank" aria-label="Instagram" class="ins-social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thircollective" target="_blank" aria-label="LinkedIn" class="ins-social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@thircollective" target="_blank" aria-label="YouTube" class="ins-social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/share/1B5sjKtafN/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="ins-social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="ins-footer-bottom">
+      <p>&copy; 2026 THIR Collective. All rights reserved.</p>
+      <div class="ins-footer-paw" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="currentColor">
+          <ellipse cx="32" cy="42" rx="14" ry="11"/>
+          <circle cx="13" cy="30" r="7"/>
+          <circle cx="51" cy="30" r="7"/>
+          <circle cx="26" cy="20" r="6"/>
+          <circle cx="38" cy="20" r="6"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* Navbar scroll */
+      const navbar = document.getElementById('insNavbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      }, { passive: true });
+
+      /* Scroll reveal */
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      function observeZone(zone) {
+        zone.querySelectorAll('.reveal-fade, .reveal-up').forEach(el => {
+          if (!el.classList.contains('visible')) {
+            revealObserver.observe(el);
+          }
+        });
+      }
+
+      /* Always-visible elements (outside any [data-zone]) */
+      document.querySelectorAll('.reveal-fade, .reveal-up').forEach(el => {
+        if (!el.closest('[data-zone]')) {
+          revealObserver.observe(el);
+        }
+      });
+
+      /* Tab logic */
+      const tabButtons = document.querySelectorAll('[data-tab]');
+      const tabZones   = document.querySelectorAll('[data-zone]');
+
+      function activateTab(tabId) {
+        tabButtons.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.tab === tabId);
+        });
+        tabZones.forEach(zone => {
+          const isActive = zone.dataset.zone === tabId;
+          zone.style.display = isActive ? 'block' : 'none';
+          if (isActive) {
+            requestAnimationFrame(() => observeZone(zone));
+          }
+        });
+      }
+
+      /* Read query param on load */
+      const params   = new URLSearchParams(window.location.search);
+      const forParam = params.get('for');
+      const valid    = ['schools', 'companies'];
+      activateTab(valid.includes(forParam) ? forParam : 'schools');
+
+      /* Tab click handler */
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabId = btn.dataset.tab;
+          activateTab(tabId);
+          const url = new URL(window.location.href);
+          url.searchParams.set('for', tabId);
+          history.replaceState(null, '', url.toString());
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>

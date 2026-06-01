@@ -1833,3 +1833,334 @@ video {
     gap: 1.25rem;
   }
 }
+
+/* ===========================
+   PHILOSOPHY CARDS
+=========================== */
+.philosophy .section-title,
+.phil-title-centered {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.philosophy .section-label {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.phil-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.phil-card {
+  background: var(--bg-light);
+  border: 1px solid rgba(184, 150, 106, 0.15);
+  border-radius: 10px;
+  padding: 2rem 1.75rem;
+  transition: border-color 0.3s var(--ease-out);
+}
+
+.phil-card:hover {
+  border-color: rgba(184, 150, 106, 0.35);
+}
+
+.phil-card-heading {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--gold-bright);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.phil-card-body {
+  font-size: 0.92rem;
+  color: var(--stone-light);
+  line-height: 1.75;
+}
+
+@media (max-width: 640px) {
+  .phil-cards {
+    grid-template-columns: 1fr;
+  }
+  .philosophy .section-title {
+    text-align: center;
+  }
+}
+
+/* ===========================
+   FORK SECTION
+=========================== */
+.fork {
+  background: var(--bg-mid);
+}
+
+.fork-intro {
+  font-family: var(--font-sans);
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+}
+
+.fork-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.fork-card {
+  background: var(--bg-light);
+  border: 1px solid rgba(184, 150, 106, 0.15);
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color 0.3s var(--ease-out);
+}
+
+.fork-card:hover {
+  border-color: rgba(184, 150, 106, 0.35);
+}
+
+.fork-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.fork-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.fork-card-heading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.fork-card-body {
+  font-size: 0.88rem;
+  color: var(--stone-light);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+  flex: 1;
+}
+
+.fork-card .btn-primary {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .fork-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   HOW WE WORK
+=========================== */
+.how-we-work {
+  background: var(--bg);
+}
+
+.how-we-work .container {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.hww-col .workshop-slider-wrap {
+  max-width: 100%;
+  padding: 0 44px;
+  margin-top: 1.5rem;
+}
+
+.hww-col .workshop-card {
+  min-width: 100%;
+  min-height: 300px;
+}
+
+.hww-col .workshop-card-inner {
+  padding: 40px 32px 36px;
+}
+
+.how-we-work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.hww-col {
+  background: var(--bg-mid);
+  padding: 3rem 2.5rem;
+  border: 1px solid rgba(184, 150, 106, 0.1);
+  min-width: 0;
+}
+
+.hww-col:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.hww-col:last-child {
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+
+.hww-col-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(184, 150, 106, 0.4);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.hww-col-section-name {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.hww-col-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.pricing-signal {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--stone-light);
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .how-we-work-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 1rem;
+  }
+
+  .hww-col:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .hww-col:last-child {
+    border-radius: 0 0 10px 10px;
+    border-left: 1px solid rgba(184, 150, 106, 0.1);
+    border-top: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hww-col {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ===========================
+   FOUNDER BIO
+=========================== */
+.founder-bio {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--warm);
+  line-height: 1.75;
+}
+
+/* ===========================
+   GUIDED STEP FLOW
+=========================== */
+.guided-cards {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 1px;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: rgba(184, 150, 106, 0.08);
+}
+
+.guided-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.guided-card {
+  min-width: 100%;
+  min-height: 300px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  background: var(--bg);
+  transition: background 0.4s;
+}
+
+.guided-card:hover {
+  background: var(--bg-light);
+}
+
+.guided-arrow--prev { left: 0; }
+.guided-arrow--next { right: 0; }
+
+.guided-card .workshop-tagline {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.guided-dots-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.guided-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(184, 150, 106, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.guided-dot.active {
+  background: var(--gold);
+  transform: scale(1.4);
+}
+

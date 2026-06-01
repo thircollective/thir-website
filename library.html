@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Library | THIR Collective</title>
+  <meta name="description" content="Short reads on mind fitness, human behaviour, and the practice of inner steadiness. One article a week from the founding team at Thir Collective." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="Assets/logo_no_text.png" />
+  <link rel="apple-touch-icon" href="Assets/logo_no_text.png" />
+  <style>
+    /* ---- Reset ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #0d0d0b;
+      --bg-surface:  #141410;
+      --bg-light:    #1a1a14;
+      --gold:        #b8964e;
+      --gold-light:  #d4af72;
+      --text:        #e8e2d4;
+      --text-muted:  #8a8272;
+      --border:      rgba(184,150,78,0.2);
+      --border-dim:  rgba(184,150,78,0.12);
+      --border-hover:rgba(184,150,78,0.45);
+      --cream:       #e8e2d4;
+      --stone-light: #8a8272;
+      --font-serif:  'Cormorant Garamond', Georgia, serif;
+      --font-sans:   'DM Sans', system-ui, sans-serif;
+      --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 500px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(184,150,78,0.055) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---- Layout ---- */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================
+       NAVBAR
+    ============================ */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      transition: background 0.5s var(--ease-out), backdrop-filter 0.5s;
+    }
+
+    .navbar.scrolled {
+      background: rgba(13,13,11,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 48px;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-links a.nav-cta {
+      color: var(--gold);
+      border: 1px solid rgba(184,150,78,0.35);
+      padding: 8px 20px;
+      transition: color 0.3s, background 0.3s;
+    }
+
+    .nav-links a.nav-cta:hover {
+      background: rgba(184,150,78,0.1);
+      color: var(--gold-light);
+    }
+
+    .nav-social {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+
+    .social-icon:hover { color: var(--gold); }
+    .social-icon svg { width: 20px; height: 20px; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      width: 32px;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 1px;
+      background: var(--text);
+      transition: transform 0.4s var(--ease-out), opacity 0.3s;
+      transform-origin: center;
+    }
+
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+    /* Mobile Overlay */
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: #141410;
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s var(--ease-out);
+    }
+
+    .mobile-overlay.open { opacity: 1; pointer-events: auto; }
+    .mobile-overlay-inner { text-align: center; }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 48px;
+    }
+
+    .mobile-nav-links li { overflow: hidden; }
+
+    .mobile-link {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 6vw, 3.2rem);
+      font-weight: 300;
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 0;
+      transition: color 0.3s;
+    }
+
+    .mobile-link:hover,
+    .mobile-link.active { color: var(--gold); }
+
+    .mobile-social {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    /* ============================
+       HERO
+    ============================ */
+    .lib-hero {
+      padding: 160px 40px 80px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .lib-hero-glow {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 80vmax; height: 60vmax;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at 50% 20%, rgba(184,150,78,0.07) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .lib-hero-inner {
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lib-hero-eyebrow {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .lib-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .lib-hero-title em {
+      display: block;
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .lib-hero-sub {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.8;
+    }
+
+    /* ============================
+       FILTER BAR
+    ============================ */
+    .lib-filter-bar {
+      border-top: 1px solid rgba(184,150,78,0.18);
+      border-bottom: 1px solid rgba(184,150,78,0.18);
+      padding: 20px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--bg);
+    }
+
+    .lib-filter-inner {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      padding: 0 40px;
+    }
+
+    .lib-filter-inner::-webkit-scrollbar { display: none; }
+
+    .lib-filter-label {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .lib-filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+    }
+
+    .lib-pill {
+      flex-shrink: 0;
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(184,150,78,0.35);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .lib-pill:hover {
+      border-color: rgba(184,150,78,0.65);
+      color: var(--gold-light);
+    }
+
+    .lib-pill.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--bg);
+      font-weight: 500;
+    }
+
+    /* ============================
+       FEATURED ROW
+    ============================ */
+    .lib-featured {
+      padding: 80px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lib-featured-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    /* Featured card */
+    .lib-card-featured {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: border-color 0.3s;
+    }
+
+    .lib-card-featured:hover { border-color: var(--border-hover); }
+
+    .lib-card-img-area {
+      position: relative;
+      background: var(--bg-light);
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: opacity 0.3s;
+    }
+
+    .lib-card-img-texture {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 9rem;
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.06;
+      user-select: none;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .lib-card-img-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 4px 10px;
+    }
+
+    .lib-card-body {
+      padding: 28px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .lib-card-cat {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .lib-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .lib-card-excerpt {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .lib-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .lib-card-read-time {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .lib-card-arrow {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Right column stack */
+    .lib-featured-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Secondary article card */
+    .lib-card-secondary {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 24px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .lib-coming-soon {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Persistent CTA card */
+    .lib-cta-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .lib-cta-label {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .lib-cta-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .lib-cta-body {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .lib-cta-btn {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 12px 24px;
+      background: var(--gold);
+      color: var(--bg);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      transition: background 0.2s, border-color 0.2s;
+      align-self: flex-start;
+    }
+
+    .lib-cta-btn:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    /* ============================
+       ARTICLE GRID
+    ============================ */
+    .lib-grid-section {
+      padding: 48px 0 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lib-grid-label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .lib-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* Grid card */
+    .lib-grid-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: border-color 0.25s, transform 0.25s, opacity 0.2s;
+    }
+
+    .lib-grid-card:not(.coming-soon):hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .lib-grid-card.coming-soon {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .lib-grid-card .lib-card-img-area { height: 140px; }
+    .lib-grid-card .lib-card-img-texture { font-size: 5rem; }
+
+    .lib-grid-card .lib-card-body {
+      padding: 20px 20px 24px;
+      gap: 8px;
+    }
+
+    .lib-grid-card .lib-card-title { font-size: 1.15rem; }
+
+    .lib-grid-card.filter-hidden { display: none; }
+
+    /* ============================
+       LOAD MORE
+    ============================ */
+    .lib-load-more {
+      padding: 0 0 80px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lib-load-more-btn {
+      display: inline-block;
+      padding: 14px 40px;
+      border: 1px solid rgba(184,150,78,0.25);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: transparent;
+      cursor: default;
+      opacity: 0.55;
+      margin-bottom: 20px;
+    }
+
+    .lib-load-more-note {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .lib-load-more-note a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .lib-load-more-note a:hover { color: var(--gold-light); }
+
+    /* ============================
+       FOOTER
+    ============================ */
+    .footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .footer-logo-block { flex-shrink: 0; }
+
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      margin-bottom: 8px;
+      display: block;
+      filter: brightness(0.7);
+    }
+
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .footer-nav a {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-nav a:hover { color: var(--gold); }
+
+    .footer-dot {
+      color: rgba(184,150,78,0.35);
+      font-size: 14px;
+      margin: 0 10px;
+      line-height: 1;
+    }
+
+    .footer-social {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(184,150,78,0.1);
+      padding: 14px 40px 20px;
+      position: relative;
+    }
+
+    .footer-bottom p {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .footer-paw {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.15;
+      color: var(--gold);
+    }
+
+    .footer-paw svg { width: 26px; height: 26px; display: block; }
+
+    /* ============================
+       SCROLL REVEAL
+    ============================ */
+    .reveal-fade, .reveal-up {
+      opacity: 0;
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+      transition-delay: var(--delay, 0s);
+    }
+
+    .reveal-up { transform: translateY(28px); }
+    .reveal-fade.visible, .reveal-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 1024px) {
+      .nav-social { display: none; }
+    }
+
+    @media (max-width: 900px) {
+      .lib-featured-grid { grid-template-columns: 1fr; }
+      .lib-featured-right { flex-direction: row; }
+      .lib-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner { padding: 18px 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .container { padding: 0 24px; }
+      .lib-hero { padding: 120px 24px 60px; }
+      .lib-filter-inner { padding: 0 24px; }
+      .lib-featured { padding: 60px 0 0; }
+      .lib-grid-section { padding: 36px 0 60px; }
+      .lib-load-more { padding: 0 0 60px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px 24px; }
+      .footer-nav { justify-content: flex-start; }
+      .footer-bottom { padding: 14px 24px; }
+      .footer-paw { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .lib-featured-right { flex-direction: column; }
+      .lib-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================
+       NAVBAR
+  ============================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Assets/logo_no_text.png" alt="THIR Collective logo" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="individual.html">Individual Programmes</a></li>
+        <li><a href="institution.html">Institutional Programmes</a></li>
+        <li><a href="library.html" class="active">Library</a></li>
+        <li><a href="index.html#philosophy">Philosophy</a></li>
+        <li><a href="index.html#founders">Founders</a></li>
+        <li><a href="index.html#inquiry" class="nav-cta">Inquire</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/thircollective" target="_blank" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thircollective" target="_blank" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@thircollective" target="_blank" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/share/1B5sjKtafN/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-overlay-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="individual.html" class="mobile-link">Individual Programmes</a></li>
+        <li><a href="institution.html" class="mobile-link">Institutional Programmes</a></li>
+        <li><a href="library.html" class="mobile-link active">Library</a></li>
+        <li><a href="index.html#philosophy" class="mobile-link">Philosophy</a></li>
+        <li><a href="index.html#founders" class="mobile-link">Founders</a></li>
+        <li><a href="index.html#inquiry" class="mobile-link">Inquire</a></li>
+      </ul>
+      <div class="mobile-social">
+        <a href="https://www.instagram.com/thircollective" target="_blank" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thircollective" target="_blank" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@thircollective" target="_blank" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/share/1B5sjKtafN/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       HERO
+  ============================ -->
+  <section class="lib-hero">
+    <div class="lib-hero-glow"></div>
+    <div class="lib-hero-inner">
+      <span class="lib-hero-eyebrow reveal-fade">The Library</span>
+      <h1 class="lib-hero-title reveal-up" style="--delay: 0.1s">
+        Ideas worth<br/><em>sitting with.</em>
+      </h1>
+      <p class="lib-hero-sub reveal-up" style="--delay: 0.2s">
+        Short reads on mind fitness, human behaviour, and the practice of inner steadiness. One article a week from the founding team at Thir Collective.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================
+       FILTER BAR
+  ============================ -->
+  <div class="lib-filter-bar">
+    <div class="lib-filter-inner">
+      <span class="lib-filter-label">Browse by</span>
+      <div class="lib-filter-pills">
+        <button class="lib-pill active" data-filter="all">All</button>
+        <button class="lib-pill" data-filter="mind-fitness">Mind Fitness</button>
+        <button class="lib-pill" data-filter="human-behaviour">Human Behaviour</button>
+        <button class="lib-pill" data-filter="arrive-method">The ARRIVE Method</button>
+        <button class="lib-pill" data-filter="for-institutions">For Institutions</button>
+        <button class="lib-pill" data-filter="philosophy">Philosophy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       FEATURED ARTICLE ROW
+  ============================ -->
+  <section class="lib-featured" id="lib-featured-row">
+    <div class="container">
+      <div class="lib-featured-grid">
+
+        <!-- Featured card -->
+        <a href="library/why-you-are-always-exhausted.html" class="lib-card-featured reveal-up">
+          <div class="lib-card-img-area">
+            <span class="lib-card-img-texture">Thir</span>
+            <span class="lib-card-img-tag">Latest</span>
+          </div>
+          <div class="lib-card-body">
+            <span class="lib-card-cat">Mind Fitness</span>
+            <h2 class="lib-card-title">Why You Are Always Exhausted, And Why Sleep Is Not the Answer</h2>
+            <p class="lib-card-excerpt">If you are sleeping enough but still waking up tired, the problem is not your body. It is something no amount of rest can fix.</p>
+            <div class="lib-card-meta">
+              <span class="lib-card-read-time">6 min read</span>
+              <span class="lib-card-arrow">Read article &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Right column -->
+        <div class="lib-featured-right">
+
+          <!-- Secondary article card (coming soon) -->
+          <div class="lib-card-secondary reveal-up" style="--delay: 0.1s">
+            <span class="lib-card-cat">Human Behaviour</span>
+            <p style="font-family:var(--font-serif);font-size:1.2rem;font-weight:400;color:var(--text);line-height:1.25;margin-bottom:4px;">Why Your Brain Keeps Replaying the Conversation</p>
+            <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:8px;">The Zeigarnik effect and what it means for the way you carry unfinished things.</p>
+            <div class="lib-card-meta">
+              <span class="lib-card-read-time">4 min read</span>
+              <span class="lib-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+
+          <!-- Persistent CTA card -->
+          <div class="lib-cta-card reveal-up" id="lib-cta-card" style="--delay: 0.15s">
+            <span class="lib-cta-label">Free discovery call</span>
+            <p class="lib-cta-title">Ready to move from reading to practice?</p>
+            <p class="lib-cta-body">One conversation. 40 minutes. No commitment. Just a starting point.</p>
+            <a href="https://wa.me/919250416325?text=Hi%2C%20I%27d%20like%20to%20book%20a%20discovery%20call%20with%20THIR%20Collective." target="_blank" class="lib-cta-btn">Book your call</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       ARTICLE GRID
+  ============================ -->
+  <section class="lib-grid-section">
+    <div class="container">
+      <span class="lib-grid-label reveal-fade">All articles</span>
+      <div class="lib-grid" id="lib-grid">
+
+        <!-- Card 1: Philosophy -->
+        <div class="lib-grid-card coming-soon reveal-up" data-category="philosophy" style="--delay: 0.05s">
+          <div class="lib-card-img-area">
+            <span class="lib-card-img-texture">Thir</span>
+          </div>
+          <div class="lib-card-body">
+            <span class="lib-card-cat">Philosophy</span>
+            <p class="lib-card-title">What the Word Thir Actually Means</p>
+            <div class="lib-card-meta">
+              <span class="lib-card-read-time">3 min read</span>
+              <span class="lib-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: For Institutions -->
+        <div class="lib-grid-card coming-soon reveal-up" data-category="for-institutions" style="--delay: 0.1s">
+          <div class="lib-card-img-area">
+            <span class="lib-card-img-texture">NEP</span>
+          </div>
+          <div class="lib-card-body">
+            <span class="lib-card-cat">For Institutions</span>
+            <p class="lib-card-title">What NEP 2020 Actually Asks Schools to Do About Wellbeing</p>
+            <div class="lib-card-meta">
+              <span class="lib-card-read-time">6 min read</span>
+              <span class="lib-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: The ARRIVE Method -->
+        <div class="lib-grid-card coming-soon reveal-up" data-category="arrive-method" style="--delay: 0.15s">
+          <div class="lib-card-img-area">
+            <span class="lib-card-img-texture">PERMA</span>
+          </div>
+          <div class="lib-card-body">
+            <span class="lib-card-cat">The ARRIVE Method</span>
+            <p class="lib-card-title">The Five Elements of a Flourishing Life, And Why Most People Are Missing Two of Them</p>
+            <div class="lib-card-meta">
+              <span class="lib-card-read-time">5 min read</span>
+              <span class="lib-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Human Behaviour -->
+        <div class="lib-grid-card coming-soon reveal-up" data-category="human-behaviour" style="--delay: 0.05s">
+          <div class="lib-card-img-area">
+            <span class="lib-card-img-texture">Loop</span>
+          </div>
+          <div class="lib-card-body">
+            <span class="lib-card-cat">Human Behaviour</span>
+            <p class="lib-card-title">The Zeigarnik Effect: Why Your Brain Cannot Let Go of Unfinished Things</p>
+            <div class="lib-card-meta">
+              <span class="lib-card-read-time">4 min read</span>
+              <span class="lib-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Mind Fitness -->
+        <div class="lib-grid-card coming-soon reveal-up" data-category="mind-fitness" style="--delay: 0.1s">
+          <div class="lib-card-img-area">
+            <span class="lib-card-img-texture">Still</span>
+          </div>
+          <div class="lib-card-body">
+            <span class="lib-card-cat">Mind Fitness</span>
+            <p class="lib-card-title">Stillness Is Not a Personality Trait. It Is a Skill.</p>
+            <div class="lib-card-meta">
+              <span class="lib-card-read-time">5 min read</span>
+              <span class="lib-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: For Institutions -->
+        <div class="lib-grid-card coming-soon reveal-up" data-category="for-institutions" style="--delay: 0.15s">
+          <div class="lib-card-img-area">
+            <span class="lib-card-img-texture">Burn</span>
+          </div>
+          <div class="lib-card-body">
+            <span class="lib-card-cat">For Institutions</span>
+            <p class="lib-card-title">What Burnout Actually Costs an Organisation, And What to Do About It</p>
+            <div class="lib-card-meta">
+              <span class="lib-card-read-time">7 min read</span>
+              <span class="lib-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       LOAD MORE
+  ============================ -->
+  <div class="lib-load-more">
+    <div class="container">
+      <div class="lib-load-more-btn">More articles coming soon</div>
+      <p class="lib-load-more-note">
+        New articles published every week. Follow us on
+        <a href="https://www.instagram.com/thircollective" target="_blank">Instagram</a>
+        for updates.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============================
+       FOOTER
+  ============================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo-block">
+        <img src="Assets/logo_no_text.png" alt="THIR Collective" class="footer-logo" />
+        <p class="footer-tagline">Not Therapy. Not Motivation.<br/><em style="color:var(--text-muted)">Something Different.</em></p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="individual.html">Individual</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="institution.html">Institutional</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="index.html#philosophy">Philosophy</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="index.html#founders">Founders</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/thircollective" target="_blank" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thircollective" target="_blank" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@thircollective" target="_blank" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/share/1B5sjKtafN/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 THIR Collective. All rights reserved.</p>
+      <div class="footer-paw" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="currentColor">
+          <ellipse cx="32" cy="42" rx="14" ry="11"/>
+          <circle cx="13" cy="30" r="7"/>
+          <circle cx="51" cy="30" r="7"/>
+          <circle cx="26" cy="20" r="6"/>
+          <circle cx="38" cy="20" r="6"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      /* Navbar scroll */
+      var navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', function() {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      }, { passive: true });
+
+      /* Hamburger */
+      var hamburger = document.getElementById('hamburger');
+      var mobileOverlay = document.getElementById('mobileOverlay');
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        mobileOverlay.classList.toggle('open');
+      });
+      mobileOverlay.addEventListener('click', function(e) {
+        if (e.target === mobileOverlay) {
+          hamburger.classList.remove('active');
+          mobileOverlay.classList.remove('open');
+        }
+      });
+      mobileOverlay.querySelectorAll('.mobile-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          mobileOverlay.classList.remove('open');
+        });
+      });
+
+      /* Scroll reveal */
+      var revealEls = document.querySelectorAll('.reveal-fade, .reveal-up');
+      var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+      /* Filter pills */
+      var pills = document.querySelectorAll('.lib-pill');
+      var gridCards = document.querySelectorAll('#lib-grid .lib-grid-card');
+
+      pills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          pills.forEach(function(p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          var filter = pill.getAttribute('data-filter');
+          gridCards.forEach(function(card) {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.classList.remove('filter-hidden');
+            } else {
+              card.classList.add('filter-hidden');
+            }
+          });
+        });
+      });
+
+    });
+  </script>
+
+</body>
+</html>

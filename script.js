@@ -391,6 +391,54 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselDots.forEach((dot, i) => dot.classList.toggle('active', i === activeCard));
       }
     }, { passive: true });
+
+    setInterval(() => {
+      goToCard((activeCard + 1) % carouselCards.length);
+    }, 15000);
+  }
+
+
+  /* ===========================
+     GUIDED STEP FLOW CAROUSEL
+  =========================== */
+  const guidedTrack = document.querySelector('.guided-cards');
+  const guidedPrevArrow = document.querySelector('.guided-arrow--prev');
+  const guidedNextArrow = document.querySelector('.guided-arrow--next');
+  const guidedDots = document.querySelectorAll('.guided-dot');
+  const guidedCards = document.querySelectorAll('.guided-card');
+  let activeGuidedCard = 0;
+
+  function goToGuidedCard(index) {
+    index = ((index % guidedCards.length) + guidedCards.length) % guidedCards.length;
+    guidedTrack.scrollTo({ left: guidedCards[index].offsetLeft, behavior: 'smooth' });
+    activeGuidedCard = index;
+    guidedDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  }
+
+  if (guidedPrevArrow) guidedPrevArrow.addEventListener('click', () => goToGuidedCard(activeGuidedCard - 1));
+  if (guidedNextArrow) guidedNextArrow.addEventListener('click', () => goToGuidedCard(activeGuidedCard + 1));
+
+  guidedDots.forEach(dot => {
+    dot.addEventListener('click', () => goToGuidedCard(+dot.dataset.index));
+  });
+
+  if (guidedTrack) {
+    guidedTrack.addEventListener('scroll', () => {
+      let closest = 0;
+      let minDiff = Infinity;
+      guidedCards.forEach((card, i) => {
+        const diff = Math.abs(card.offsetLeft - guidedTrack.scrollLeft);
+        if (diff < minDiff) { minDiff = diff; closest = i; }
+      });
+      if (closest !== activeGuidedCard) {
+        activeGuidedCard = closest;
+        guidedDots.forEach((dot, i) => dot.classList.toggle('active', i === activeGuidedCard));
+      }
+    }, { passive: true });
+
+    setInterval(() => {
+      goToGuidedCard((activeGuidedCard + 1) % guidedCards.length);
+    }, 15000);
   }
 
 
