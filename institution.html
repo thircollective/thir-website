@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mind Fitness Workshops for Schools and Companies | THIR Collective</title>
-  <meta name="description" content="Mind fitness workshops and coaching for schools and companies across Delhi NCR. Rooted in positive psychology. Measurable outcomes included."/>
+  <meta name="description" content="Mind fitness workshops and coaching for schools and companies across Delhi NCR. Inspired by positive psychology. Measurable outcomes included."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://thircollective.com/institution"/>
 
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="THIR Collective"/>
   <meta property="og:title" content="Mind Fitness Workshops for Schools and Companies | THIR Collective"/>
-  <meta property="og:description" content="Mind fitness workshops and coaching for schools and companies across Delhi NCR. Rooted in positive psychology. Measurable outcomes included."/>
+  <meta property="og:description" content="Mind fitness workshops and coaching for schools and companies across Delhi NCR. INspired by positive psychology. Measurable outcomes included."/>
   <meta property="og:url" content="https://thircollective.com/institution"/>
   <meta property="og:image" content="https://thircollective.com/Assets/og-image.png"/>
 
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Mind Fitness Workshops for Schools and Companies | THIR Collective"/>
-  <meta name="twitter:description" content="Mind fitness workshops and coaching for schools, NGOs, and companies across Delhi NCR. Rooted in positive psychology. Measurable outcomes included."/>
+  <meta name="twitter:description" content="Mind fitness workshops and coaching for schools, NGOs, and companies across Delhi NCR. Inspired by positive psychology. Measurable outcomes included."/>
   <meta name="twitter:image" content="https://thircollective.com/Assets/og-image.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1038,6 +1038,54 @@
       .ins-focus-grid { grid-template-columns: 1fr; }
       .ins-closing-buttons { flex-direction: column; align-items: center; }
     }
+
+    /* 3-column stats variant */
+    .ins-stats-row.three-col { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 640px) {
+      .ins-stats-row.three-col { grid-template-columns: 1fr; }
+    }
+
+    /* 2-column statement grid variant (4-card 2x2) */
+    .ins-statement-grid.two-col { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 560px) {
+      .ins-statement-grid.two-col { grid-template-columns: 1fr; }
+    }
+
+    /* Workshop outcome line */
+    .ins-workshop-outcome {
+      border-top: 1px solid rgba(184,150,78,0.2);
+      padding-top: 12px;
+      margin-top: 4px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(138,130,114,0.75);
+      line-height: 1.65;
+    }
+
+    /* Pricing component mini-list */
+    .ins-price-components {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .ins-price-components li {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-muted);
+      padding-left: 10px;
+      position: relative;
+    }
+    .ins-price-components li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -1113,7 +1161,7 @@
         <em>This is how you protect it.</em>
       </h1>
       <p class="ins-hero-sub reveal-up" style="--delay: 0.3s">
-        We work with Schools and Organisations to build the inner steadiness that makes everything else possible. Inspired by positive psychology. Every engagement is tracked through structured wellbeing data.
+        We work with Schools and Organisations to build the inner steadiness that makes everything else possible. Inspired by positive psychology, philosophy, and contemplative wisdom. Every engagement is tracked through structured wellbeing data.
       </p>
     </div>
   </section>
@@ -1124,8 +1172,8 @@
   <section class="ins-tabs-section">
     <p class="ins-tabs-label">I am here for</p>
     <div class="ins-tabs-row">
-      <button class="ins-tab" data-tab="schools">Schools</button>
-      <button class="ins-tab" data-tab="companies">Organisations</button>
+      <button class="ins-tab" data-tab="schools">Educational Institutions</button>
+      <button class="ins-tab" data-tab="companies">Businesses & Organisations</button>
     </div>
   </section>
 
@@ -1136,7 +1184,7 @@
 
     <section class="ins-zone-who section">
       <div class="container">
-        <div class="ins-stats-row">
+        <div class="ins-stats-row three-col">
           <div class="ins-stat-card reveal-up" style="--delay: 0.1s">
             <p class="ins-stat-number">70%</p>
             <p class="ins-stat-desc">of Indian teachers experience emotional and mental exhaustion due to their work</p>
@@ -1146,6 +1194,11 @@
             <p class="ins-stat-number">1 in 4</p>
             <p class="ins-stat-desc">teachers does not feel their school adequately supports their mental health</p>
             <p class="ins-stat-source">NCERT Teachers Mental Well-Being Survey 2024, Ministry of Education, Government of India</p>
+          </div>
+          <div class="ins-stat-card reveal-up" style="--delay: 0.2s">
+            <p class="ins-stat-number">SDG 3</p>
+            <p class="ins-stat-desc">The United Nations 2030 Agenda commits every member state to promoting mental health and wellbeing for all. A school that invests in its educators is contributing to one of the most important global priorities of our time.</p>
+            <p class="ins-stat-source">UN Sustainable Development Goal 3, Target 3.4</p>
           </div>
         </div>
         <p class="ins-stat-source" style="margin-top:0.75rem;"></p>
@@ -1157,10 +1210,10 @@
         </p>
       </div>
       <div class="container">
-        <div class="ins-statement-grid">
+        <div class="ins-statement-grid two-col">
           <div class="ins-statement-card reveal-up" style="--delay: 0.05s"><p>Teaching staff managing pressure, fatigue, and emotional load</p></div>
           <div class="ins-statement-card reveal-up" style="--delay: 0.1s"><p>School leadership looking to invest in staff wellbeing</p></div>
-          <div class="ins-statement-card reveal-up" style="--delay: 0.25s"><p>Institutions with a mandate under NEP 2020 for social-emotional learning</p></div>
+          <div class="ins-statement-card reveal-up" style="--delay: 0.2s"><p>Institutions with a mandate under NEP 2020 for social-emotional learning</p></div>
           <div class="ins-statement-card reveal-up" style="--delay: 0.3s"><p>Teams that want a shared language for emotional regulation</p></div>
         </div>
       </div>
@@ -1177,21 +1230,21 @@
             <h3 class="ins-workshop-name">Rahao</h3>
             <span class="ins-workshop-tagline">Pause. Ground. Respond.</span>
             <p class="ins-workshop-desc">The art of the pause. Learning to stop before reacting. For teachers carrying the weight of thirty students, a room, and a curriculum simultaneously.</p>
-            <span class="tag">1.5 to 2 hours</span>
+            <p class="ins-workshop-outcome">Where your teachers will be: Patient and strong communicators who respond with intention rather than react under pressure.</p>
           </div>
           <div class="ins-workshop-card reveal-up" style="--delay: 0.1s">
             <span class="ins-workshop-num">02</span>
             <h3 class="ins-workshop-name">Vichaar</h3>
             <span class="ins-workshop-tagline">Reflect. Understand. Decide.</span>
             <p class="ins-workshop-desc">Honest reflection. Separating fact from story, emotion from interpretation. For educators who need clarity under pressure, not just coping strategies.</p>
-            <span class="tag">1.5 to 2 hours</span>
+            <p class="ins-workshop-outcome">Where your teachers will be: Empathetic and adaptable individuals who read situations clearly, communicate without assumption, and model the kind of reflective thinking students need to see.</p>
           </div>
           <div class="ins-workshop-card reveal-up" style="--delay: 0.15s">
             <span class="ins-workshop-num">03</span>
             <h3 class="ins-workshop-name">Agami</h3>
             <span class="ins-workshop-tagline">Prepare. Begin. Move.</span>
             <p class="ins-workshop-desc">Intentional action. Converting insight into practice that actually holds inside a classroom. Closing the gap between knowing what matters and doing it.</p>
-            <span class="tag">1.5 to 2 hours</span>
+            <p class="ins-workshop-outcome">Where your teachers will be: Prepared and organised individuals who approach their work as lifelong learners, planning with purpose and following through with consistency.</p>
           </div>
         </div>
         <p style="font-family:var(--font-sans);font-size:12px;font-weight:300;font-style:italic;color:var(--text-muted);margin-top:20px;">These are the three foundational workshops. Specialised workshops covering overthinking, leadership behaviours, decision making, critical thinking, and managing overwhelm are coming soon.</p>
@@ -1206,11 +1259,11 @@
         <div class="ins-outcome-grid">
           <div class="ins-outcome-card reveal-up" style="--delay: 0.05s">
             <h4 class="ins-outcome-title">A measure of where your staff actually are</h4>
-            <p class="ins-outcome-desc">Before and after every session, we gather structured wellbeing data from your staff. You receive a clear wellbeing report, showing where your team started and how it moved. Evidence your leadership can read, discuss, and act on.</p>
+            <p class="ins-outcome-desc">Structured measurement of where your staff actually are. Evidence your leadership can act on, not just read.</p>
           </div>
           <div class="ins-outcome-card reveal-up" style="--delay: 0.1s">
-            <h4 class="ins-outcome-title">Outcome report within 15 days</h4>
-            <p class="ins-outcome-desc">A structured document presenting scores, themes, and recommendations. Delivered after every session.</p>
+            <h4 class="ins-outcome-title">Outcome report with retainer only</h4>
+            <p class="ins-outcome-desc">When your school is on the THIR Wellbeing Partnership Program, your leadership receives a written wellbeing report every month — structured data showing where your team is, how it is moving, and what to act on next.</p>
           </div>
           <div class="ins-outcome-card reveal-up" style="--delay: 0.15s">
             <h4 class="ins-outcome-title">A shared language for your staff</h4>
@@ -1219,6 +1272,10 @@
           <div class="ins-outcome-card reveal-up" style="--delay: 0.2s">
             <h4 class="ins-outcome-title">NEP 2020 CPD Alignment</h4>
             <p class="ins-outcome-desc">50 hours of CPD per teacher per year. That is the NEP 2020 requirement. This programme counts toward it and it addresses exactly what the NCERT 2024 survey recommends schools prioritise in their CPD calendar. Not a discretionary spend. A policy response with a number behind it.</p>
+          </div>
+          <div class="ins-outcome-card reveal-up" style="--delay: 0.25s; grid-column: 1 / -1;">
+            <h4 class="ins-outcome-title">Strength Profile Analysis</h4>
+            <p class="ins-outcome-desc">A deeper read of where your staff's collective strengths lie and where the gaps are. Useful for planning, team building, and knowing where support is most needed. Included with the THIR Wellbeing Partnership Program.</p>
           </div>
         </div>
       </div>
@@ -1268,13 +1325,7 @@
             </div>
           </div>
           <div class="reveal-up" style="--delay: 0.2s">
-            <p class="ins-changes-pull">The impact compounds.</p>
-            <ul class="ins-compound-list">
-              <li class="ins-compound-item"><strong>"A teacher who can pause"</strong> becomes a classroom that can breathe.</li>
-              <li class="ins-compound-item"><strong>"A teacher who can reflect"</strong> becomes a classroom that can think.</li>
-              <li class="ins-compound-item"><strong>"A teacher who can act with intention"</strong> becomes a classroom that can grow.</li>
-              <li class="ins-compound-item"><strong>"A school where teachers arrive fully"</strong> becomes a school that produces the kind of human beings NEP 2020 envisions.</li>
-            </ul>
+            <p class="ins-changes-pull">"A teacher who can pause becomes a classroom that can breathe. A teacher who can reflect becomes a classroom that can think. A teacher who can act with intention becomes a classroom that can grow. The impact is not contained to the individual. It radiates into every classroom, every corridor, every relationship."</p>
             <div class="ins-what-we-provide">
               <p class="ins-what-we-provide-label">What we provide</p>
               <p class="ins-what-we-provide-body">After each session, participants complete a short feedback form. We synthesise the responses into a clear outcomes report with data your school can use for internal records, leadership presentations, and academic year planning.</p>
@@ -1304,10 +1355,16 @@
             <span class="tag featured">Most Impact</span>
           </div>
           <div class="ins-price-card reveal-up" style="--delay: 0.15s">
-            <h3 class="ins-price-name">Coach on Retainer</h3>
+            <h3 class="ins-price-name">THIR Wellbeing Partnership Program</h3>
             <p class="ins-price-amount">Rs. 20,000 per month</p>
-            <p class="ins-price-desc">Monthly staff wellbeing report and 1-1 and group support for your staff when needed.</p>
-            <span class="tag">Recurring</span>
+            <p class="ins-price-desc">Monthly wellbeing report, strength profile analysis, ongoing focused group sessions, and 1-1 support as needed. In-person on requirement.</p>
+            <ul class="ins-price-components">
+              <li>Monthly Wellbeing Report</li>
+              <li>Strength Profile Analysis</li>
+              <li>Ongoing Focused Group Sessions</li>
+              <li>1-1 Session Support as needed</li>
+            </ul>
+            <span class="tag">Ongoing</span>
           </div>
           <div class="ins-price-card reveal-up" style="--delay: 0.2s">
             <h3 class="ins-price-name">Post-Workshop Content Package</h3>
@@ -1315,16 +1372,12 @@
             <p class="ins-price-amount">Rs. 5,000 per workshop</p>
             <p class="ins-price-desc">Professionally written social media content for your school's channels. Extends the conversation and signals your commitment to staff wellbeing.</p>
           </div>
-          <div class="ins-price-card reveal-up" style="--delay: 0.25s">
-            <h3 class="ins-price-name">Focused Group Sessions</h3>
-            <p class="ins-price-amount">Rs. 1,899 per head</p>
-            <p class="ins-price-desc">Minimum 10 people. 90 minutes per session. Built around what your specific group needs to develop. Series pricing available.</p>
-          </div>
         </div>
         <p class="ins-pricing-note" style="text-align:center;">Full series pricing across all three workshops negotiated on headcount. Contact us to discuss.</p>
         <div class="ins-cta-strip reveal-up" style="--delay: 0.1s">
           <div class="ins-cta-strip-left">
             <h3 class="ins-cta-strip-heading">Bring the ARRIVE Method to your school.</h3>
+            <p class="ins-cta-strip-sub">Read the full programme brochure at thircollective.com/institution</p>
           </div>
           <div class="ins-cta-strip-actions">
             <a href="https://wa.me/919250416325?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20school%20workshop%20programme%20at%20THIR%20Collective." target="_blank" class="btn-primary">Get in touch on WhatsApp</a>
@@ -1385,21 +1438,21 @@
             <h3 class="ins-workshop-name">Rahao</h3>
             <span class="ins-workshop-tagline">Pause. Ground. Respond.</span>
             <p class="ins-workshop-desc">For professionals who respond to everything and reflect on nothing. The pause before the reaction. Learning that the space between stimulus and response is where real decisions live.</p>
-            <span class="tag">2 hours</span>
+            
           </div>
           <div class="ins-workshop-card reveal-up" style="--delay: 0.1s">
             <span class="ins-workshop-num">02</span>
             <h3 class="ins-workshop-name">Vichaar</h3>
             <span class="ins-workshop-tagline">Reflect. Understand. Decide.</span>
             <p class="ins-workshop-desc">Separating fact from narrative. For teams where decisions are shaped by emotion, assumption, or pressure rather than clarity.</p>
-            <span class="tag">2 hours</span>
+           
           </div>
           <div class="ins-workshop-card reveal-up" style="--delay: 0.15s">
             <span class="ins-workshop-num">03</span>
             <h3 class="ins-workshop-name">Agami</h3>
             <span class="ins-workshop-tagline">Prepare. Begin. Move.</span>
             <p class="ins-workshop-desc">From insight to action. Bridging the gap between knowing what matters and actually doing it. For organisations where follow-through is the missing link.</p>
-            <span class="tag">2 hours</span>
+            
           </div>
         </div>
         <p style="font-family:var(--font-sans);font-size:12px;font-weight:300;font-style:italic;color:var(--text-muted);margin-top:20px;">These are the three foundational workshops. Specialised workshops covering overthinking, leadership behaviours, decision making, critical thinking, and managing overwhelm are coming soon.</p>
@@ -1425,7 +1478,7 @@
             <p class="ins-outcome-desc">Participants leave with tools they can use independently. The practice does not stop when the session ends.</p>
           </div>
           <div class="ins-outcome-card reveal-up" style="--delay: 0.2s">
-            <h4 class="ins-outcome-title">Coach on retainer option</h4>
+            <h4 class="ins-outcome-title">THIR Wellbeing Partnership Program</h4>
             <p class="ins-outcome-desc">Ongoing 1-1 and group sessions. Monthly anonymised wellbeing report. Rs. 40,000 per month.</p>
           </div>
         </div>
@@ -1452,10 +1505,15 @@
             <span class="tag featured">Most Impact</span>
           </div>
           <div class="ins-price-card featured reveal-up" style="--delay: 0.1s">
-            <h3 class="ins-price-name">Coach on Retainer</h3>
+            <h3 class="ins-price-name">THIR Wellbeing Partnership Program</h3>
             <p class="ins-price-amount">Rs. 40,000 per month</p>
-            <p class="ins-price-desc">Monthly staff wellbeing report and 1-1 and group support for your staff when needed.</p>
-            <span class="tag featured">Recurring</span>
+            <p class="ins-price-desc">Monthly wellbeing report, strength profile analysis, ongoing focused group sessions, and 1-1 support as needed. In-person on requirement.</p>
+            <ul class="ins-price-components">
+              <li>Monthly Wellbeing Report</li>
+              <li>Strength Profile Analysis</li>
+              <li>Ongoing Focused Group Sessions</li>
+              <li>1-1 Session Support as needed</li>
+            </ul>
           </div>
           <div class="ins-price-card reveal-up" style="--delay: 0.15s">
             <h3 class="ins-price-name">Focused Group Sessions</h3>
@@ -1494,9 +1552,11 @@
           </div>
           <h3 class="ins-guide-name">Harleen</h3>
           <span class="ins-guide-role">Founding Coach</span>
-          <p class="ins-guide-bio">Most people leave a conversation with Harleen feeling two things they did not expect to feel together: heard, and clear.</p>
-          <p class="ins-guide-bio">She has a rare quality in any room she enters. She does not rush toward the answer. She holds the space long enough for you to find it yourself. That quality was not learned in a classroom. It was built across a decade of standing in front of thirty students every day, reading rooms, managing invisible pressures, and learning that the most important thing a person in front of others can do is make them feel that what they are carrying matters.</p>
-          <p class="ins-guide-bio">Her formal training in counselling psychology, positive psychology, and NLP gives her the framework. Her years in education gave her the instinct. The combination is why a conversation with Harleen rarely feels like a session. It feels like a weight you have been carrying finally has somewhere to go.</p>
+          <p class="ins-guide-bio">Harleen designs and delivers all of THIR's programmes. Her work sits at the intersection of positive psychology, reflective practice, resilience training and real-world application. She has spent over a decade helping individuals and groups build the inner clarity to move forward with intention.</p>
+          <div class="ins-guide-tags">
+            
+            
+          </div>
         </div>
 
         <div class="ins-guide-card reveal-up" style="--delay: 0.2s">
@@ -1505,9 +1565,7 @@
           </div>
           <h3 class="ins-guide-name">Karan</h3>
           <span class="ins-guide-role">Founding Coach</span>
-          <p class="ins-guide-bio">Karan did not learn about resilience in a seminar. He learned it the long way, across nine years of showing up inside one of the world's most demanding corporate environments, managing people through pressure, delivering results through difficult seasons, and quietly figuring out how to keep going without burning out.</p>
-          <p class="ins-guide-bio">What those years taught him was not a productivity system. It was something more useful: that the people who sustain high performance over time are not the ones who push hardest. They are the ones who have learned to manage their inner state as deliberately as they manage their workload. He found that out the hard way, and it cost him years he would rather have had back.</p>
-          <p class="ins-guide-bio">That is why he is here. Not to tell you what to do. To help you get there faster than he did.</p>
+          <p class="ins-guide-bio">Karan builds the systems that bring THIR to life. His background in analytics and operations means every programme is designed with both rigour and reach in mind. He leads business development, institutional partnerships, and the broader THIR ecosystem.</p>
         </div>
 
       </div>

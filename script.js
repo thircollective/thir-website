@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rahao: {
       num: '01',
       title: 'Rahao',
-      description: 'Helps you pause, step out of autopilot, and understand what is happening within you — so you can respond consciously instead of reacting impulsively. Rahao creates the conditions for genuine inner observation.',
+      description: 'Helps you pause, step out of autopilot, and understand what is happening within you so you can respond consciously instead of reacting impulsively. Rahao creates the conditions for genuine inner observation.',
       outcomeLabel: 'What you take away',
       outcome: 'Mental clarity, emotional grounding, and relief from constant overwhelm.'
     },
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     agami: {
       num: '03',
       title: 'Agami',
-      description: 'Helps you turn reflection into action by guiding you through the first practical steps toward meaningful change. Agami bridges the inner and the outer — thought becomes movement.',
+      description: 'Helps you turn reflection into action by guiding you through the first practical steps toward meaningful change. Agami bridges the inner and the outer. Thought becomes movement.',
       outcomeLabel: 'What you take away',
       outcome: 'Direction, confidence, and consistent forward movement.'
     }
